@@ -49,4 +49,9 @@ final class AppState: ObservableObject {
             }
         }
     }
+
+    deinit {
+        systemTimer?.invalidate()
+        quotaTimer?.invalidate()
+    }
 }

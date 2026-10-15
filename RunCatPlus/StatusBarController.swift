@@ -6,12 +6,16 @@ import SwiftUI
 /// L'image est recomposée à 30 im/s : chat animé + pastille mémoire + anneaux.
 /// Thread principal uniquement (callbacks AppKit + timers), pas de @MainActor :
 /// l'exécuteur Swift Concurrency du main actor ne fonctionne pas dans ce binaire.
-final class StatusBarController: NSObject {
+final class StatusBarController: NSObject, NSPopoverDelegate {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private weak var appState: AppState?
     private var displayTimer: Timer?
     private var ringCache: [String: NSImage] = [:]
     private var popover: NSPopover?
+
+    deinit {
+        displayTimer?.invalidate()
+    }
 
     // Géométrie de l'icône composée (points, échelle 2 en rendu).
     private let barHeight: CGFloat = 24
@@ -51,8 +55,13 @@ final class StatusBarController: NSObject {
         popover.behavior = .transient
         popover.animates = true
         popover.contentViewController = hosting
+        popover.delegate = self
         self.popover = popover
         popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
+    }
+
+    func popoverDidClose(_ notification: Notification) {
+        popover = nil
     }
 
     // MARK: - Rendu de l'icône
