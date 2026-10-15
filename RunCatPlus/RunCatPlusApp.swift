@@ -20,6 +20,7 @@ final class AppState: ObservableObject {
     let memory = MemoryProvider()
     let claude = ClaudeProvider()
     let kimi = KimiProvider()
+    let launchAgent = LaunchAgentManager()
 
     private var systemTimer: Timer?
     private var quotaTimer: Timer?
