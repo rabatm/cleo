@@ -81,18 +81,29 @@ final class LaunchAgentManager: ObservableObject {
     }
 
     private func disable() {
-        let result = runLaunchCtl(arguments: [
-            "bootout",
-            "user/\(getuid())",
-            Self.label,
-        ])
+        let plistExists = FileManager.default.fileExists(atPath: plistURL.path)
+
+        let result: Result<Void, Error>
+        if plistExists {
+            result = runLaunchCtl(arguments: [
+                "bootout",
+                "user/\(getuid())",
+                Self.label,
+            ])
+        } else {
+            result = .success(())
+        }
 
         let removalError: Error?
-        do {
-            try FileManager.default.removeItem(at: plistURL)
+        if plistExists {
+            do {
+                try FileManager.default.removeItem(at: plistURL)
+                removalError = nil
+            } catch {
+                removalError = error
+            }
+        } else {
             removalError = nil
-        } catch {
-            removalError = error
         }
 
         DispatchQueue.main.async { [weak self] in
