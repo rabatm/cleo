@@ -87,8 +87,7 @@ final class LaunchAgentManager: ObservableObject {
         if plistExists {
             result = runLaunchCtl(arguments: [
                 "bootout",
-                "user/\(getuid())",
-                Self.label,
+                "user/\(getuid())/\(Self.label)",
             ])
         } else {
             result = .success(())
@@ -122,7 +121,7 @@ final class LaunchAgentManager: ObservableObject {
 
     private func runLaunchCtl(arguments: [String]) -> Result<Void, Error> {
         let task = Process()
-        task.launchPath = "/bin/launchctl"
+        task.executableURL = URL(fileURLWithPath: "/bin/launchctl")
         task.arguments = arguments
 
         let pipe = Pipe()
