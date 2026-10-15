@@ -11,6 +11,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusBar = StatusBarController()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // Évite un doublon quand launchd lance l'app alors qu'elle tourne déjà.
+        let id = Bundle.main.bundleIdentifier ?? ""
+        if NSRunningApplication.runningApplications(withBundleIdentifier: id)
+            .contains(where: { $0 != NSRunningApplication.current }) {
+            NSApp.terminate(nil)
+            return
+        }
         statusBar.install(appState: appState)
     }
 }
