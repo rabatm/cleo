@@ -37,6 +37,8 @@ enum CatSprite {
 
     static func frame(at index: Int) -> NSImage? {
         guard !frames.isEmpty else { return nil }
-        return frames[index % frames.count]
+        let count = frames.count
+        let normalized = ((index % count) + count) % count
+        return frames[normalized]
     }
 }

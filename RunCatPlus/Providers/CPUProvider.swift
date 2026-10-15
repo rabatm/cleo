@@ -13,7 +13,9 @@ final class CPUProvider: ObservableObject {
         var cpuInfo: processor_info_array_t?
         var numCpuInfo: mach_msg_type_number_t = 0
 
-        let result = host_processor_info(mach_host_self(), PROCESSOR_CPU_LOAD_INFO,
+        let hostPort = mach_host_self()
+        defer { mach_port_deallocate(mach_task_self_, hostPort) }
+        let result = host_processor_info(hostPort, PROCESSOR_CPU_LOAD_INFO,
                                          &numCPUs, &cpuInfo, &numCpuInfo)
         guard result == KERN_SUCCESS, let info = cpuInfo else { return }
         defer {

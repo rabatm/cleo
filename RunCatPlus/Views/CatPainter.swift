@@ -24,8 +24,6 @@ enum CatPainter {
         } else {
             drawRunning(phase: phase, speed: speed, color: color, unit: u, origin: o)
         }
-        color.setFill()
-        color.setStroke()
     }
 
     // MARK: - Pose course

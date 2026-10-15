@@ -44,6 +44,10 @@ final class MemoryProvider: ObservableObject {
         pressureSource = source
     }
 
+    deinit {
+        pressureSource?.cancel()
+    }
+
     func sample() {
         var stats = vm_statistics64()
         var count = mach_msg_type_number_t(MemoryLayout<vm_statistics64>.stride
@@ -69,7 +73,9 @@ final class MemoryProvider: ObservableObject {
         newSnapshot.usedGB = Double(used) * Double(pageSize) / 1e9
         newSnapshot.usedFraction = totalPages > 0 ? Double(used) / Double(totalPages) : 0
         newSnapshot.swapUsedMB = Self.readSwapUsedMB()
-        if newSnapshot.pressure == .unknown { newSnapshot.pressure = .normal }
+        // On réinitialise à normal à chaque sample : DispatchSource ne signale
+        // que les montées en pression, jamais les retours à la normale.
+        newSnapshot.pressure = .normal
         snapshot = newSnapshot
     }
 

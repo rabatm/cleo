@@ -15,7 +15,12 @@ final class KimiProvider: ObservableObject, QuotaProviding {
     @Published private(set) var state = QuotaState()
 
     private var accessToken: String?
-    private var isFetching = false
+    private let isFetchingLock = NSLock()
+    private var _isFetching = false
+    private var isFetching: Bool {
+        get { isFetchingLock.withLock { _isFetching } }
+        set { isFetchingLock.withLock { _isFetching = newValue } }
+    }
 
     private func setState(_ newValue: QuotaState) {
         if Thread.isMainThread {

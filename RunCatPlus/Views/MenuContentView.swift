@@ -54,8 +54,6 @@ struct MenuContentView: View {
                     await kimi.refresh()
                 }
             }
-            Button("Ouvrir au démarrage (à configurer dans Réglages Système)") {}
-                .disabled(true)
             Divider()
             Button("Quitter RunCatPlus") {
                 NSApplication.shared.terminate(nil)
