@@ -1,4 +1,5 @@
 import Foundation
+import Darwin
 
 final class LaunchAgentManager: ObservableObject {
     static let label = "com.runCatPlus.startup"
@@ -17,18 +18,24 @@ final class LaunchAgentManager: ObservableObject {
     }
 
     func setEnabled(_ enabled: Bool) {
-        lastError = nil
-        if enabled {
-            enable()
-        } else {
-            disable()
+        DispatchQueue.main.async { self.lastError = nil }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self = self else { return }
+            if enabled {
+                self.enable()
+            } else {
+                self.disable()
+            }
         }
     }
 
     private func enable() {
+        let executablePath = Bundle.main.executableURL?.path
+            ?? Bundle.main.bundleURL.path + "/Contents/MacOS/RunCatPlus"
+
         let plist: [String: Any] = [
             "Label": Self.label,
-            "ProgramArguments": [Bundle.main.bundleURL.path],
+            "ProgramArguments": [executablePath],
             "RunAtLoad": true,
             "KeepAlive": false,
         ]
@@ -46,27 +53,63 @@ final class LaunchAgentManager: ObservableObject {
             )
             try data.write(to: plistURL, options: .atomic)
         } catch {
-            lastError = "Impossible d'écrire le fichier de démarrage : \(error.localizedDescription)"
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.lastError = "Impossible d'écrire le fichier de démarrage : \(error.localizedDescription)"
+                self.isEnabled = FileManager.default.fileExists(atPath: self.plistURL.path)
+            }
             return
         }
 
-        runLaunchCtl(arguments: ["load", plistURL.path])
-        isEnabled = FileManager.default.fileExists(atPath: plistURL.path)
+        let result = runLaunchCtl(arguments: [
+            "bootstrap",
+            "user/\(getuid())",
+            plistURL.path,
+        ])
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.isEnabled = FileManager.default.fileExists(atPath: self.plistURL.path)
+            case .failure(let error):
+                self.lastError = "launchctl a échoué : \(error.localizedDescription)"
+                try? FileManager.default.removeItem(at: self.plistURL)
+                self.isEnabled = FileManager.default.fileExists(atPath: self.plistURL.path)
+            }
+        }
     }
 
     private func disable() {
-        if FileManager.default.fileExists(atPath: plistURL.path) {
-            runLaunchCtl(arguments: ["unload", plistURL.path])
-        }
+        let result = runLaunchCtl(arguments: [
+            "bootout",
+            "user/\(getuid())",
+            Self.label,
+        ])
+
+        let removalError: Error?
         do {
             try FileManager.default.removeItem(at: plistURL)
+            removalError = nil
         } catch {
-            lastError = "Impossible de supprimer le fichier de démarrage : \(error.localizedDescription)"
+            removalError = error
         }
-        isEnabled = FileManager.default.fileExists(atPath: plistURL.path)
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                if let error = removalError {
+                    self.lastError = "Impossible de supprimer le fichier de démarrage : \(error.localizedDescription)"
+                }
+            case .failure(let error):
+                self.lastError = "launchctl a échoué : \(error.localizedDescription)"
+            }
+            self.isEnabled = FileManager.default.fileExists(atPath: self.plistURL.path)
+        }
     }
 
-    private func runLaunchCtl(arguments: [String]) {
+    private func runLaunchCtl(arguments: [String]) -> Result<Void, Error> {
         let task = Process()
         task.launchPath = "/bin/launchctl"
         task.arguments = arguments
@@ -79,15 +122,21 @@ final class LaunchAgentManager: ObservableObject {
             try task.run()
             task.waitUntilExit()
         } catch {
-            lastError = "launchctl a échoué : \(error.localizedDescription)"
-            return
+            return .failure(error)
         }
 
         if task.terminationStatus != 0 {
             let data = pipe.fileHandleForReading.readDataToEndOfFile()
             let message = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)
                 ?? "code \(task.terminationStatus)"
-            lastError = "launchctl : \(message)"
+            let error = NSError(
+                domain: "LaunchAgentManager",
+                code: Int(task.terminationStatus),
+                userInfo: [NSLocalizedDescriptionKey: message]
+            )
+            return .failure(error)
         }
+
+        return .success(())
     }
 }

@@ -5,7 +5,7 @@ Reutilisable : ajoutez un fichier Swift a SOURCES puis relancez ce script.
 """
 import os
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJ = os.path.join(ROOT, "RunCatPlus.xcodeproj")
 TARGET_NAME = "RunCatPlus"
 BUNDLE_ID = "com.maretin.runcatplus"
@@ -14,6 +14,7 @@ SOURCES = [
     "RunCatPlus/main.swift",
     "RunCatPlus/RunCatPlusApp.swift",
     "RunCatPlus/StatusBarController.swift",
+    "RunCatPlus/Launch/LaunchAgentManager.swift",
     "RunCatPlus/Providers/CPUProvider.swift",
     "RunCatPlus/Providers/MemoryProvider.swift",
     "RunCatPlus/Providers/QuotaProvider.swift",
@@ -37,7 +38,7 @@ def uid():
     return f"C{_counter[0]:023X}"
 
 PROJECT_ID, TARGET_ID, PRODUCT_REF = uid(), uid(), uid()
-MAIN_GROUP, APP_GROUP, PROVIDERS_GROUP, VIEWS_GROUP, CATFRAMES_GROUP = uid(), uid(), uid(), uid(), uid()
+MAIN_GROUP, APP_GROUP, PROVIDERS_GROUP, VIEWS_GROUP, CATFRAMES_GROUP, LAUNCH_GROUP = uid(), uid(), uid(), uid(), uid(), uid()
 SRC_PHASE, FW_PHASE, RES_PHASE = uid(), uid(), uid()
 PROJ_CONF_LIST, TGT_CONF_LIST = uid(), uid()
 PROJ_DEBUG, PROJ_RELEASE, TGT_DEBUG, TGT_RELEASE = uid(), uid(), uid(), uid()
@@ -47,6 +48,8 @@ def group_of(path):
         return PROVIDERS_GROUP
     if "/Views/" in path:
         return VIEWS_GROUP
+    if "/Launch/" in path:
+        return LAUNCH_GROUP
     return None
 
 FILE_REFS, BUILD_FILES, NAMES = {}, {}, {}
@@ -62,6 +65,7 @@ for r in RESOURCES:
 NAMES[PRODUCT_REF] = f"{TARGET_NAME}.app"
 NAMES[PROVIDERS_GROUP] = "Providers"
 NAMES[VIEWS_GROUP] = "Views"
+NAMES[LAUNCH_GROUP] = "Launch"
 NAMES[CATFRAMES_GROUP] = "CatFrames"
 NAMES[APP_GROUP] = TARGET_NAME
 
@@ -199,13 +203,15 @@ def group_block(gid, children, path=None):
 
 provider_children = [FILE_REFS[s] for s in SOURCES if group_of(s) == PROVIDERS_GROUP]
 view_children = [FILE_REFS[s] for s in SOURCES if group_of(s) == VIEWS_GROUP]
+launch_children = [FILE_REFS[s] for s in SOURCES if group_of(s) == LAUNCH_GROUP]
 app_children = [FILE_REFS[s] for s in SOURCES if group_of(s) is None]
-app_children += [PROVIDERS_GROUP, VIEWS_GROUP, CATFRAMES_GROUP]
+app_children += [PROVIDERS_GROUP, VIEWS_GROUP, CATFRAMES_GROUP, LAUNCH_GROUP]
 main_children = [PRODUCT_REF, APP_GROUP]
 catframes_children = [FILE_REFS[r] for r in RESOURCES]
 
 out.append(group_block(PROVIDERS_GROUP, provider_children, "Providers"))
 out.append(group_block(VIEWS_GROUP, view_children, "Views"))
+out.append(group_block(LAUNCH_GROUP, launch_children, "Launch"))
 out.append(group_block(CATFRAMES_GROUP, catframes_children, "CatFrames"))
 out.append(group_block(APP_GROUP, app_children, TARGET_NAME))
 out.append(group_block(MAIN_GROUP, main_children))

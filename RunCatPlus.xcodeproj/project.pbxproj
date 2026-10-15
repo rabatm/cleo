@@ -7,76 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C00000000000000000000013 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000012 /* main.swift */; };
-		C00000000000000000000015 /* RunCatPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000014 /* RunCatPlusApp.swift */; };
-		C00000000000000000000017 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000016 /* StatusBarController.swift */; };
-		C00000000000000000000019 /* CPUProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000018 /* CPUProvider.swift */; };
-		C0000000000000000000001B /* MemoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001A /* MemoryProvider.swift */; };
-		C0000000000000000000001D /* QuotaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001C /* QuotaProvider.swift */; };
-		C0000000000000000000001F /* ClaudeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001E /* ClaudeProvider.swift */; };
-		C00000000000000000000021 /* KimiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000020 /* KimiProvider.swift */; };
-		C00000000000000000000023 /* CatPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000022 /* CatPainter.swift */; };
-		C00000000000000000000025 /* CatSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000024 /* CatSprite.swift */; };
-		C00000000000000000000027 /* QuotaRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000026 /* QuotaRingView.swift */; };
-		C00000000000000000000029 /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000028 /* MenuContentView.swift */; };
-		C0000000000000000000002B /* frame0.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002A /* frame0.png */; };
-		C0000000000000000000002D /* frame1.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002C /* frame1.png */; };
-		C0000000000000000000002F /* frame10.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002E /* frame10.png */; };
-		C00000000000000000000031 /* frame11.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000030 /* frame11.png */; };
-		C00000000000000000000033 /* frame12.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000032 /* frame12.png */; };
-		C00000000000000000000035 /* frame13.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000034 /* frame13.png */; };
-		C00000000000000000000037 /* frame14.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000036 /* frame14.png */; };
-		C00000000000000000000039 /* frame15.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000038 /* frame15.png */; };
-		C0000000000000000000003B /* frame16.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003A /* frame16.png */; };
-		C0000000000000000000003D /* frame17.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003C /* frame17.png */; };
-		C0000000000000000000003F /* frame18.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003E /* frame18.png */; };
-		C00000000000000000000041 /* frame2.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000040 /* frame2.png */; };
-		C00000000000000000000043 /* frame3.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000042 /* frame3.png */; };
-		C00000000000000000000045 /* frame4.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000044 /* frame4.png */; };
-		C00000000000000000000047 /* frame5.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000046 /* frame5.png */; };
-		C00000000000000000000049 /* frame6.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000048 /* frame6.png */; };
-		C0000000000000000000004B /* frame7.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004A /* frame7.png */; };
-		C0000000000000000000004D /* frame8.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004C /* frame8.png */; };
-		C0000000000000000000004F /* frame9.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004E /* frame9.png */; };
+		C00000000000000000000014 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000013 /* main.swift */; };
+		C00000000000000000000016 /* RunCatPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000015 /* RunCatPlusApp.swift */; };
+		C00000000000000000000018 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000017 /* StatusBarController.swift */; };
+		C0000000000000000000001A /* LaunchAgentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000019 /* LaunchAgentManager.swift */; };
+		C0000000000000000000001C /* CPUProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001B /* CPUProvider.swift */; };
+		C0000000000000000000001E /* MemoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001D /* MemoryProvider.swift */; };
+		C00000000000000000000020 /* QuotaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001F /* QuotaProvider.swift */; };
+		C00000000000000000000022 /* ClaudeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000021 /* ClaudeProvider.swift */; };
+		C00000000000000000000024 /* KimiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000023 /* KimiProvider.swift */; };
+		C00000000000000000000026 /* CatPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000025 /* CatPainter.swift */; };
+		C00000000000000000000028 /* CatSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000027 /* CatSprite.swift */; };
+		C0000000000000000000002A /* QuotaRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000029 /* QuotaRingView.swift */; };
+		C0000000000000000000002C /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002B /* MenuContentView.swift */; };
+		C0000000000000000000002E /* frame0.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002D /* frame0.png */; };
+		C00000000000000000000030 /* frame1.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002F /* frame1.png */; };
+		C00000000000000000000032 /* frame10.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000031 /* frame10.png */; };
+		C00000000000000000000034 /* frame11.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000033 /* frame11.png */; };
+		C00000000000000000000036 /* frame12.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000035 /* frame12.png */; };
+		C00000000000000000000038 /* frame13.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000037 /* frame13.png */; };
+		C0000000000000000000003A /* frame14.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000039 /* frame14.png */; };
+		C0000000000000000000003C /* frame15.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003B /* frame15.png */; };
+		C0000000000000000000003E /* frame16.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003D /* frame16.png */; };
+		C00000000000000000000040 /* frame17.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003F /* frame17.png */; };
+		C00000000000000000000042 /* frame18.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000041 /* frame18.png */; };
+		C00000000000000000000044 /* frame2.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000043 /* frame2.png */; };
+		C00000000000000000000046 /* frame3.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000045 /* frame3.png */; };
+		C00000000000000000000048 /* frame4.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000047 /* frame4.png */; };
+		C0000000000000000000004A /* frame5.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000049 /* frame5.png */; };
+		C0000000000000000000004C /* frame6.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004B /* frame6.png */; };
+		C0000000000000000000004E /* frame7.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004D /* frame7.png */; };
+		C00000000000000000000050 /* frame8.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004F /* frame8.png */; };
+		C00000000000000000000052 /* frame9.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000051 /* frame9.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C00000000000000000000003 /* RunCatPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunCatPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C00000000000000000000012 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "main.swift"; sourceTree = "<group>"; };
-		C00000000000000000000014 /* RunCatPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunCatPlusApp.swift"; sourceTree = "<group>"; };
-		C00000000000000000000016 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatusBarController.swift"; sourceTree = "<group>"; };
-		C00000000000000000000018 /* CPUProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CPUProvider.swift"; sourceTree = "<group>"; };
-		C0000000000000000000001A /* MemoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoryProvider.swift"; sourceTree = "<group>"; };
-		C0000000000000000000001C /* QuotaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotaProvider.swift"; sourceTree = "<group>"; };
-		C0000000000000000000001E /* ClaudeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClaudeProvider.swift"; sourceTree = "<group>"; };
-		C00000000000000000000020 /* KimiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KimiProvider.swift"; sourceTree = "<group>"; };
-		C00000000000000000000022 /* CatPainter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatPainter.swift"; sourceTree = "<group>"; };
-		C00000000000000000000024 /* CatSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatSprite.swift"; sourceTree = "<group>"; };
-		C00000000000000000000026 /* QuotaRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotaRingView.swift"; sourceTree = "<group>"; };
-		C00000000000000000000028 /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuContentView.swift"; sourceTree = "<group>"; };
-		C0000000000000000000002A /* frame0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame0.png"; sourceTree = "<group>"; };
-		C0000000000000000000002C /* frame1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame1.png"; sourceTree = "<group>"; };
-		C0000000000000000000002E /* frame10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame10.png"; sourceTree = "<group>"; };
-		C00000000000000000000030 /* frame11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame11.png"; sourceTree = "<group>"; };
-		C00000000000000000000032 /* frame12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame12.png"; sourceTree = "<group>"; };
-		C00000000000000000000034 /* frame13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame13.png"; sourceTree = "<group>"; };
-		C00000000000000000000036 /* frame14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame14.png"; sourceTree = "<group>"; };
-		C00000000000000000000038 /* frame15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame15.png"; sourceTree = "<group>"; };
-		C0000000000000000000003A /* frame16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame16.png"; sourceTree = "<group>"; };
-		C0000000000000000000003C /* frame17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame17.png"; sourceTree = "<group>"; };
-		C0000000000000000000003E /* frame18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame18.png"; sourceTree = "<group>"; };
-		C00000000000000000000040 /* frame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame2.png"; sourceTree = "<group>"; };
-		C00000000000000000000042 /* frame3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame3.png"; sourceTree = "<group>"; };
-		C00000000000000000000044 /* frame4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame4.png"; sourceTree = "<group>"; };
-		C00000000000000000000046 /* frame5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame5.png"; sourceTree = "<group>"; };
-		C00000000000000000000048 /* frame6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame6.png"; sourceTree = "<group>"; };
-		C0000000000000000000004A /* frame7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame7.png"; sourceTree = "<group>"; };
-		C0000000000000000000004C /* frame8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame8.png"; sourceTree = "<group>"; };
-		C0000000000000000000004E /* frame9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame9.png"; sourceTree = "<group>"; };
+		C00000000000000000000013 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "main.swift"; sourceTree = "<group>"; };
+		C00000000000000000000015 /* RunCatPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunCatPlusApp.swift"; sourceTree = "<group>"; };
+		C00000000000000000000017 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatusBarController.swift"; sourceTree = "<group>"; };
+		C00000000000000000000019 /* LaunchAgentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaunchAgentManager.swift"; sourceTree = "<group>"; };
+		C0000000000000000000001B /* CPUProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CPUProvider.swift"; sourceTree = "<group>"; };
+		C0000000000000000000001D /* MemoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoryProvider.swift"; sourceTree = "<group>"; };
+		C0000000000000000000001F /* QuotaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotaProvider.swift"; sourceTree = "<group>"; };
+		C00000000000000000000021 /* ClaudeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClaudeProvider.swift"; sourceTree = "<group>"; };
+		C00000000000000000000023 /* KimiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KimiProvider.swift"; sourceTree = "<group>"; };
+		C00000000000000000000025 /* CatPainter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatPainter.swift"; sourceTree = "<group>"; };
+		C00000000000000000000027 /* CatSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatSprite.swift"; sourceTree = "<group>"; };
+		C00000000000000000000029 /* QuotaRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotaRingView.swift"; sourceTree = "<group>"; };
+		C0000000000000000000002B /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuContentView.swift"; sourceTree = "<group>"; };
+		C0000000000000000000002D /* frame0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame0.png"; sourceTree = "<group>"; };
+		C0000000000000000000002F /* frame1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame1.png"; sourceTree = "<group>"; };
+		C00000000000000000000031 /* frame10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame10.png"; sourceTree = "<group>"; };
+		C00000000000000000000033 /* frame11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame11.png"; sourceTree = "<group>"; };
+		C00000000000000000000035 /* frame12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame12.png"; sourceTree = "<group>"; };
+		C00000000000000000000037 /* frame13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame13.png"; sourceTree = "<group>"; };
+		C00000000000000000000039 /* frame14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame14.png"; sourceTree = "<group>"; };
+		C0000000000000000000003B /* frame15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame15.png"; sourceTree = "<group>"; };
+		C0000000000000000000003D /* frame16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame16.png"; sourceTree = "<group>"; };
+		C0000000000000000000003F /* frame17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame17.png"; sourceTree = "<group>"; };
+		C00000000000000000000041 /* frame18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame18.png"; sourceTree = "<group>"; };
+		C00000000000000000000043 /* frame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame2.png"; sourceTree = "<group>"; };
+		C00000000000000000000045 /* frame3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame3.png"; sourceTree = "<group>"; };
+		C00000000000000000000047 /* frame4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame4.png"; sourceTree = "<group>"; };
+		C00000000000000000000049 /* frame5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame5.png"; sourceTree = "<group>"; };
+		C0000000000000000000004B /* frame6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame6.png"; sourceTree = "<group>"; };
+		C0000000000000000000004D /* frame7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame7.png"; sourceTree = "<group>"; };
+		C0000000000000000000004F /* frame8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame8.png"; sourceTree = "<group>"; };
+		C00000000000000000000051 /* frame9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame9.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C0000000000000000000000A /* Frameworks */ = {
+		C0000000000000000000000B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -89,11 +91,11 @@
 		C00000000000000000000006 = {
 			isa = PBXGroup;
 			children = (
-				C00000000000000000000018 /* CPUProvider.swift */,
-				C0000000000000000000001A /* MemoryProvider.swift */,
-				C0000000000000000000001C /* QuotaProvider.swift */,
-				C0000000000000000000001E /* ClaudeProvider.swift */,
-				C00000000000000000000020 /* KimiProvider.swift */,
+				C0000000000000000000001B /* CPUProvider.swift */,
+				C0000000000000000000001D /* MemoryProvider.swift */,
+				C0000000000000000000001F /* QuotaProvider.swift */,
+				C00000000000000000000021 /* ClaudeProvider.swift */,
+				C00000000000000000000023 /* KimiProvider.swift */,
 			);
 			path = "Providers";
 			sourceTree = "<group>";
@@ -101,36 +103,44 @@
 		C00000000000000000000007 = {
 			isa = PBXGroup;
 			children = (
-				C00000000000000000000022 /* CatPainter.swift */,
-				C00000000000000000000024 /* CatSprite.swift */,
-				C00000000000000000000026 /* QuotaRingView.swift */,
-				C00000000000000000000028 /* MenuContentView.swift */,
+				C00000000000000000000025 /* CatPainter.swift */,
+				C00000000000000000000027 /* CatSprite.swift */,
+				C00000000000000000000029 /* QuotaRingView.swift */,
+				C0000000000000000000002B /* MenuContentView.swift */,
 			);
 			path = "Views";
+			sourceTree = "<group>";
+		};
+		C00000000000000000000009 = {
+			isa = PBXGroup;
+			children = (
+				C00000000000000000000019 /* LaunchAgentManager.swift */,
+			);
+			path = "Launch";
 			sourceTree = "<group>";
 		};
 		C00000000000000000000008 = {
 			isa = PBXGroup;
 			children = (
-				C0000000000000000000002A /* frame0.png */,
-				C0000000000000000000002C /* frame1.png */,
-				C0000000000000000000002E /* frame10.png */,
-				C00000000000000000000030 /* frame11.png */,
-				C00000000000000000000032 /* frame12.png */,
-				C00000000000000000000034 /* frame13.png */,
-				C00000000000000000000036 /* frame14.png */,
-				C00000000000000000000038 /* frame15.png */,
-				C0000000000000000000003A /* frame16.png */,
-				C0000000000000000000003C /* frame17.png */,
-				C0000000000000000000003E /* frame18.png */,
-				C00000000000000000000040 /* frame2.png */,
-				C00000000000000000000042 /* frame3.png */,
-				C00000000000000000000044 /* frame4.png */,
-				C00000000000000000000046 /* frame5.png */,
-				C00000000000000000000048 /* frame6.png */,
-				C0000000000000000000004A /* frame7.png */,
-				C0000000000000000000004C /* frame8.png */,
-				C0000000000000000000004E /* frame9.png */,
+				C0000000000000000000002D /* frame0.png */,
+				C0000000000000000000002F /* frame1.png */,
+				C00000000000000000000031 /* frame10.png */,
+				C00000000000000000000033 /* frame11.png */,
+				C00000000000000000000035 /* frame12.png */,
+				C00000000000000000000037 /* frame13.png */,
+				C00000000000000000000039 /* frame14.png */,
+				C0000000000000000000003B /* frame15.png */,
+				C0000000000000000000003D /* frame16.png */,
+				C0000000000000000000003F /* frame17.png */,
+				C00000000000000000000041 /* frame18.png */,
+				C00000000000000000000043 /* frame2.png */,
+				C00000000000000000000045 /* frame3.png */,
+				C00000000000000000000047 /* frame4.png */,
+				C00000000000000000000049 /* frame5.png */,
+				C0000000000000000000004B /* frame6.png */,
+				C0000000000000000000004D /* frame7.png */,
+				C0000000000000000000004F /* frame8.png */,
+				C00000000000000000000051 /* frame9.png */,
 			);
 			path = "CatFrames";
 			sourceTree = "<group>";
@@ -138,12 +148,13 @@
 		C00000000000000000000005 = {
 			isa = PBXGroup;
 			children = (
-				C00000000000000000000012 /* main.swift */,
-				C00000000000000000000014 /* RunCatPlusApp.swift */,
-				C00000000000000000000016 /* StatusBarController.swift */,
+				C00000000000000000000013 /* main.swift */,
+				C00000000000000000000015 /* RunCatPlusApp.swift */,
+				C00000000000000000000017 /* StatusBarController.swift */,
 				C00000000000000000000006 /* Providers */,
 				C00000000000000000000007 /* Views */,
 				C00000000000000000000008 /* CatFrames */,
+				C00000000000000000000009 /* Launch */,
 			);
 			path = "RunCatPlus";
 			sourceTree = "<group>";
@@ -161,11 +172,11 @@
 /* Begin PBXNativeTarget section */
 		C00000000000000000000002 /* RunCatPlus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0000000000000000000000D /* Build configuration list for PBXNativeTarget "RunCatPlus" */;
+			buildConfigurationList = C0000000000000000000000E /* Build configuration list for PBXNativeTarget "RunCatPlus" */;
 			buildPhases = (
-				C00000000000000000000009 /* Sources */,
-				C0000000000000000000000A /* Frameworks */,
-				C0000000000000000000000B /* Resources */,
+				C0000000000000000000000A /* Sources */,
+				C0000000000000000000000B /* Frameworks */,
+				C0000000000000000000000C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -192,7 +203,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C0000000000000000000000C /* Build configuration list for PBXProject "RunCatPlus" */;
+			buildConfigurationList = C0000000000000000000000D /* Build configuration list for PBXProject "RunCatPlus" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -211,58 +222,59 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C0000000000000000000000B /* Resources */ = {
+		C0000000000000000000000C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0000000000000000000002B /* frame0.png in Resources */,
-				C0000000000000000000002D /* frame1.png in Resources */,
-				C0000000000000000000002F /* frame10.png in Resources */,
-				C00000000000000000000031 /* frame11.png in Resources */,
-				C00000000000000000000033 /* frame12.png in Resources */,
-				C00000000000000000000035 /* frame13.png in Resources */,
-				C00000000000000000000037 /* frame14.png in Resources */,
-				C00000000000000000000039 /* frame15.png in Resources */,
-				C0000000000000000000003B /* frame16.png in Resources */,
-				C0000000000000000000003D /* frame17.png in Resources */,
-				C0000000000000000000003F /* frame18.png in Resources */,
-				C00000000000000000000041 /* frame2.png in Resources */,
-				C00000000000000000000043 /* frame3.png in Resources */,
-				C00000000000000000000045 /* frame4.png in Resources */,
-				C00000000000000000000047 /* frame5.png in Resources */,
-				C00000000000000000000049 /* frame6.png in Resources */,
-				C0000000000000000000004B /* frame7.png in Resources */,
-				C0000000000000000000004D /* frame8.png in Resources */,
-				C0000000000000000000004F /* frame9.png in Resources */,
+				C0000000000000000000002E /* frame0.png in Resources */,
+				C00000000000000000000030 /* frame1.png in Resources */,
+				C00000000000000000000032 /* frame10.png in Resources */,
+				C00000000000000000000034 /* frame11.png in Resources */,
+				C00000000000000000000036 /* frame12.png in Resources */,
+				C00000000000000000000038 /* frame13.png in Resources */,
+				C0000000000000000000003A /* frame14.png in Resources */,
+				C0000000000000000000003C /* frame15.png in Resources */,
+				C0000000000000000000003E /* frame16.png in Resources */,
+				C00000000000000000000040 /* frame17.png in Resources */,
+				C00000000000000000000042 /* frame18.png in Resources */,
+				C00000000000000000000044 /* frame2.png in Resources */,
+				C00000000000000000000046 /* frame3.png in Resources */,
+				C00000000000000000000048 /* frame4.png in Resources */,
+				C0000000000000000000004A /* frame5.png in Resources */,
+				C0000000000000000000004C /* frame6.png in Resources */,
+				C0000000000000000000004E /* frame7.png in Resources */,
+				C00000000000000000000050 /* frame8.png in Resources */,
+				C00000000000000000000052 /* frame9.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C00000000000000000000009 /* Sources */ = {
+		C0000000000000000000000A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C00000000000000000000013 /* main.swift in Sources */,
-				C00000000000000000000015 /* RunCatPlusApp.swift in Sources */,
-				C00000000000000000000017 /* StatusBarController.swift in Sources */,
-				C00000000000000000000019 /* CPUProvider.swift in Sources */,
-				C0000000000000000000001B /* MemoryProvider.swift in Sources */,
-				C0000000000000000000001D /* QuotaProvider.swift in Sources */,
-				C0000000000000000000001F /* ClaudeProvider.swift in Sources */,
-				C00000000000000000000021 /* KimiProvider.swift in Sources */,
-				C00000000000000000000023 /* CatPainter.swift in Sources */,
-				C00000000000000000000025 /* CatSprite.swift in Sources */,
-				C00000000000000000000027 /* QuotaRingView.swift in Sources */,
-				C00000000000000000000029 /* MenuContentView.swift in Sources */,
+				C00000000000000000000014 /* main.swift in Sources */,
+				C00000000000000000000016 /* RunCatPlusApp.swift in Sources */,
+				C00000000000000000000018 /* StatusBarController.swift in Sources */,
+				C0000000000000000000001A /* LaunchAgentManager.swift in Sources */,
+				C0000000000000000000001C /* CPUProvider.swift in Sources */,
+				C0000000000000000000001E /* MemoryProvider.swift in Sources */,
+				C00000000000000000000020 /* QuotaProvider.swift in Sources */,
+				C00000000000000000000022 /* ClaudeProvider.swift in Sources */,
+				C00000000000000000000024 /* KimiProvider.swift in Sources */,
+				C00000000000000000000026 /* CatPainter.swift in Sources */,
+				C00000000000000000000028 /* CatSprite.swift in Sources */,
+				C0000000000000000000002A /* QuotaRingView.swift in Sources */,
+				C0000000000000000000002C /* MenuContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C0000000000000000000000E /* Debug */ = {
+		C0000000000000000000000F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			ALWAYS_SEARCH_USER_PATHS = NO;
@@ -307,7 +319,7 @@
 			};
 			name = Debug;
 		};
-		C0000000000000000000000F /* Release */ = {
+		C00000000000000000000010 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			ALWAYS_SEARCH_USER_PATHS = NO;
@@ -349,7 +361,7 @@
 			};
 			name = Release;
 		};
-		C00000000000000000000010 /* Debug */ = {
+		C00000000000000000000011 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			ALWAYS_SEARCH_USER_PATHS = NO;
@@ -408,7 +420,7 @@
 			};
 			name = Debug;
 		};
-		C00000000000000000000011 /* Release */ = {
+		C00000000000000000000012 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			ALWAYS_SEARCH_USER_PATHS = NO;
@@ -467,20 +479,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C0000000000000000000000C /* Build configuration list for PBXProject "RunCatPlus" */ = {
+		C0000000000000000000000D /* Build configuration list for PBXProject "RunCatPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C0000000000000000000000E /* Debug */,
-				C0000000000000000000000F /* Release */,
+				C0000000000000000000000F /* Debug */,
+				C00000000000000000000010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0000000000000000000000D /* Build configuration list for PBXNativeTarget "RunCatPlus" */ = {
+		C0000000000000000000000E /* Build configuration list for PBXNativeTarget "RunCatPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C00000000000000000000010 /* Debug */,
-				C00000000000000000000011 /* Release */,
+				C00000000000000000000011 /* Debug */,
+				C00000000000000000000012 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
