@@ -48,7 +48,8 @@ final class StatusBarController: NSObject, NSPopoverDelegate {
         let content = MenuContentView(cpu: appState.cpu,
                                       memory: appState.memory,
                                       claude: appState.claude,
-                                      kimi: appState.kimi)
+                                      kimi: appState.kimi,
+                                      launchAgent: appState.launchAgent)
         let hosting = NSHostingController(rootView: content)
         hosting.preferredContentSize = NSSize(width: 300, height: 400)
         let popover = NSPopover()

@@ -6,6 +6,7 @@ struct MenuContentView: View {
     @ObservedObject var memory: MemoryProvider
     @ObservedObject var claude: ClaudeProvider
     @ObservedObject var kimi: KimiProvider
+    @ObservedObject var launchAgent: LaunchAgentManager
 
     var body: some View {
         Group {
@@ -55,6 +56,17 @@ struct MenuContentView: View {
                 }
             }
             Divider()
+
+            Toggle("Lancer au démarrage", isOn: Binding(
+                get: { launchAgent.isEnabled },
+                set: { launchAgent.setEnabled($0) }
+            ))
+            if let error = launchAgent.lastError {
+                Text(error)
+                    .font(.caption)
+                    .foregroundStyle(.red)
+                    .lineLimit(2)
+            }
             Button("Quitter RunCatPlus") {
                 NSApplication.shared.terminate(nil)
             }
