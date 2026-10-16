@@ -1,34 +1,34 @@
 #!/usr/bin/env python3
-"""Genere RunCatPlus.xcodeproj (pbxproj + scheme) pour les sources listées.
+"""Genere Cleo.xcodeproj (pbxproj + scheme) pour les sources listées.
 
 Reutilisable : ajoutez un fichier Swift a SOURCES puis relancez ce script.
 """
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJ = os.path.join(ROOT, "RunCatPlus.xcodeproj")
-TARGET_NAME = "RunCatPlus"
-BUNDLE_ID = "com.maretin.runcatplus"
+PROJ = os.path.join(ROOT, "Cleo.xcodeproj")
+TARGET_NAME = "Cleo"
+BUNDLE_ID = "com.maretin.cleo"
 
 SOURCES = [
-    "RunCatPlus/main.swift",
-    "RunCatPlus/RunCatPlusApp.swift",
-    "RunCatPlus/StatusBarController.swift",
-    "RunCatPlus/Launch/LaunchAgentManager.swift",
-    "RunCatPlus/Providers/CPUProvider.swift",
-    "RunCatPlus/Providers/MemoryProvider.swift",
-    "RunCatPlus/Providers/QuotaProvider.swift",
-    "RunCatPlus/Providers/ClaudeProvider.swift",
-    "RunCatPlus/Providers/KimiProvider.swift",
-    "RunCatPlus/Views/CatPainter.swift",
-    "RunCatPlus/Views/CatSprite.swift",
-    "RunCatPlus/Views/QuotaRingView.swift",
-    "RunCatPlus/Views/MenuContentView.swift",
+    "Cleo/main.swift",
+    "Cleo/CleoApp.swift",
+    "Cleo/StatusBarController.swift",
+    "Cleo/Launch/LaunchAgentManager.swift",
+    "Cleo/Providers/CPUProvider.swift",
+    "Cleo/Providers/MemoryProvider.swift",
+    "Cleo/Providers/QuotaProvider.swift",
+    "Cleo/Providers/ClaudeProvider.swift",
+    "Cleo/Providers/KimiProvider.swift",
+    "Cleo/Views/CatPainter.swift",
+    "Cleo/Views/CatSprite.swift",
+    "Cleo/Views/QuotaRingView.swift",
+    "Cleo/Views/MenuContentView.swift",
 ]
 
 RESOURCES = sorted(
-    os.path.join("RunCatPlus/CatFrames", f)
-    for f in os.listdir(os.path.join(ROOT, "RunCatPlus/CatFrames"))
+    os.path.join("Cleo/CatFrames", f)
+    for f in os.listdir(os.path.join(ROOT, "Cleo/CatFrames"))
     if f.startswith("frame") and f.endswith(".png")
 )
 
@@ -113,7 +113,7 @@ def build_settings(project, config):
             "CURRENT_PROJECT_VERSION = 1;",
             'DEVELOPMENT_TEAM = "";',
             "GENERATE_INFOPLIST_FILE = YES;",
-            "INFOPLIST_KEY_CFBundleDisplayName = RunCatPlus;",
+            "INFOPLIST_KEY_CFBundleDisplayName = Cleo;",
             "INFOPLIST_KEY_LSUIElement = YES;",
             'INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026.";',
             'LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");',
@@ -351,7 +351,7 @@ scheme = f'''<?xml version="1.0" encoding="UTF-8"?>
    <BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES" buildArchitectures="Automatic">
       <BuildActionEntries>
          <BuildActionEntry buildForTesting="YES" buildForRunning="YES" buildForProfiling="YES" buildForArchiving="YES" buildForAnalyzing="YES">
-            <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="{TARGET_ID}" BuildableName="{TARGET_NAME}.app" BlueprintName="{TARGET_NAME}" ReferencedContainer="container:RunCatPlus.xcodeproj">
+            <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="{TARGET_ID}" BuildableName="{TARGET_NAME}.app" BlueprintName="{TARGET_NAME}" ReferencedContainer="container:Cleo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -360,13 +360,13 @@ scheme = f'''<?xml version="1.0" encoding="UTF-8"?>
    </TestAction>
    <LaunchAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB" launchStyle="0" useCustomWorkingDirectory="NO" ignoresPersistentStateOnLaunch="NO" debugDocumentVersioning="YES" debugServiceExtension="internal" allowLocationSimulation="YES">
       <BuildableProductRunnable runnableDebuggingMode="0">
-         <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="{TARGET_ID}" BuildableName="{TARGET_NAME}.app" BlueprintName="{TARGET_NAME}" ReferencedContainer="container:RunCatPlus.xcodeproj">
+         <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="{TARGET_ID}" BuildableName="{TARGET_NAME}.app" BlueprintName="{TARGET_NAME}" ReferencedContainer="container:Cleo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction buildConfiguration="Release" shouldUseLaunchSchemeArgsEnv="YES" savedToolIdentifier="" useCustomWorkingDirectory="NO" debugDocumentVersioning="YES">
       <BuildableProductRunnable runnableDebuggingMode="0">
-         <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="{TARGET_ID}" BuildableName="{TARGET_NAME}.app" BlueprintName="{TARGET_NAME}" ReferencedContainer="container:RunCatPlus.xcodeproj">
+         <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="{TARGET_ID}" BuildableName="{TARGET_NAME}.app" BlueprintName="{TARGET_NAME}" ReferencedContainer="container:Cleo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

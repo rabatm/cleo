@@ -67,7 +67,7 @@ struct MenuContentView: View {
                     .foregroundStyle(.red)
                     .lineLimit(2)
             }
-            Button("Quitter RunCatPlus") {
+            Button("Quitter Cleo") {
                 NSApplication.shared.terminate(nil)
             }
             .keyboardShortcut("q")

@@ -2,7 +2,7 @@ import Foundation
 import Darwin
 
 final class LaunchAgentManager: ObservableObject {
-    static let label = "com.runCatPlus.startup"
+    static let label = "com.cleo.startup"
 
     @Published private(set) var isEnabled: Bool
     @Published private(set) var lastError: String?
@@ -31,7 +31,7 @@ final class LaunchAgentManager: ObservableObject {
 
     private func enable() {
         let executablePath = Bundle.main.executableURL?.path
-            ?? Bundle.main.bundleURL.path + "/Contents/MacOS/RunCatPlus"
+            ?? Bundle.main.bundleURL.path + "/Contents/MacOS/Cleo"
 
         let plist: [String: Any] = [
             "Label": Self.label,

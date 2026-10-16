@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Aperçu du design RunCatPlus : chat (3 phases de foulée) + anneaux de quota."""
+"""Aperçu du design Cleo : chat (3 phases de foulée) + anneaux de quota."""
 import math
 from PIL import Image, ImageDraw
 

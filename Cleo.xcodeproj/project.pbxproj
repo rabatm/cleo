@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C00000000000000000000014 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000013 /* main.swift */; };
-		C00000000000000000000016 /* RunCatPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000015 /* RunCatPlusApp.swift */; };
+		C00000000000000000000016 /* CleoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000015 /* CleoApp.swift */; };
 		C00000000000000000000018 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000017 /* StatusBarController.swift */; };
 		C0000000000000000000001A /* LaunchAgentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000019 /* LaunchAgentManager.swift */; };
 		C0000000000000000000001C /* CPUProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001B /* CPUProvider.swift */; };
@@ -42,9 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C00000000000000000000003 /* RunCatPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunCatPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00000000000000000000003 /* Cleo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cleo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00000000000000000000013 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "main.swift"; sourceTree = "<group>"; };
-		C00000000000000000000015 /* RunCatPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunCatPlusApp.swift"; sourceTree = "<group>"; };
+		C00000000000000000000015 /* CleoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CleoApp.swift"; sourceTree = "<group>"; };
 		C00000000000000000000017 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatusBarController.swift"; sourceTree = "<group>"; };
 		C00000000000000000000019 /* LaunchAgentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaunchAgentManager.swift"; sourceTree = "<group>"; };
 		C0000000000000000000001B /* CPUProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CPUProvider.swift"; sourceTree = "<group>"; };
@@ -149,30 +149,30 @@
 			isa = PBXGroup;
 			children = (
 				C00000000000000000000013 /* main.swift */,
-				C00000000000000000000015 /* RunCatPlusApp.swift */,
+				C00000000000000000000015 /* CleoApp.swift */,
 				C00000000000000000000017 /* StatusBarController.swift */,
 				C00000000000000000000006 /* Providers */,
 				C00000000000000000000007 /* Views */,
 				C00000000000000000000008 /* CatFrames */,
 				C00000000000000000000009 /* Launch */,
 			);
-			path = "RunCatPlus";
+			path = "Cleo";
 			sourceTree = "<group>";
 		};
 		C00000000000000000000004 = {
 			isa = PBXGroup;
 			children = (
-				C00000000000000000000003 /* RunCatPlus.app */,
-				C00000000000000000000005 /* RunCatPlus */,
+				C00000000000000000000003 /* Cleo.app */,
+				C00000000000000000000005 /* Cleo */,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C00000000000000000000002 /* RunCatPlus */ = {
+		C00000000000000000000002 /* Cleo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0000000000000000000000E /* Build configuration list for PBXNativeTarget "RunCatPlus" */;
+			buildConfigurationList = C0000000000000000000000E /* Build configuration list for PBXNativeTarget "Cleo" */;
 			buildPhases = (
 				C0000000000000000000000A /* Sources */,
 				C0000000000000000000000B /* Frameworks */,
@@ -182,9 +182,9 @@
 			);
 			dependencies = (
 			);
-			name = RunCatPlus;
-			productName = RunCatPlus;
-			productReference = C00000000000000000000003 /* RunCatPlus.app */;
+			name = Cleo;
+			productName = Cleo;
+			productReference = C00000000000000000000003 /* Cleo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,7 +203,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C0000000000000000000000D /* Build configuration list for PBXProject "RunCatPlus" */;
+			buildConfigurationList = C0000000000000000000000D /* Build configuration list for PBXProject "Cleo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -216,7 +216,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C00000000000000000000002 /* RunCatPlus */,
+				C00000000000000000000002 /* Cleo */,
 			);
 		};
 /* End PBXProject section */
@@ -256,7 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00000000000000000000014 /* main.swift in Sources */,
-				C00000000000000000000016 /* RunCatPlusApp.swift in Sources */,
+				C00000000000000000000016 /* CleoApp.swift in Sources */,
 				C00000000000000000000018 /* StatusBarController.swift in Sources */,
 				C0000000000000000000001A /* LaunchAgentManager.swift in Sources */,
 				C0000000000000000000001C /* CPUProvider.swift in Sources */,
@@ -403,12 +403,12 @@
 			CURRENT_PROJECT_VERSION = 1;
 			DEVELOPMENT_TEAM = "";
 			GENERATE_INFOPLIST_FILE = YES;
-			INFOPLIST_KEY_CFBundleDisplayName = RunCatPlus;
+			INFOPLIST_KEY_CFBundleDisplayName = Cleo;
 			INFOPLIST_KEY_LSUIElement = YES;
 			INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026.";
 			LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
 			MARKETING_VERSION = 0.1;
-			PRODUCT_BUNDLE_IDENTIFIER = com.maretin.runcatplus;
+			PRODUCT_BUNDLE_IDENTIFIER = com.maretin.cleo;
 			PRODUCT_NAME = "$(TARGET_NAME)";
 			PROVISIONING_PROFILE_SPECIFIER = "";
 			DEBUG_INFORMATION_FORMAT = dwarf;
@@ -462,12 +462,12 @@
 			CURRENT_PROJECT_VERSION = 1;
 			DEVELOPMENT_TEAM = "";
 			GENERATE_INFOPLIST_FILE = YES;
-			INFOPLIST_KEY_CFBundleDisplayName = RunCatPlus;
+			INFOPLIST_KEY_CFBundleDisplayName = Cleo;
 			INFOPLIST_KEY_LSUIElement = YES;
 			INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026.";
 			LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
 			MARKETING_VERSION = 0.1;
-			PRODUCT_BUNDLE_IDENTIFIER = com.maretin.runcatplus;
+			PRODUCT_BUNDLE_IDENTIFIER = com.maretin.cleo;
 			PRODUCT_NAME = "$(TARGET_NAME)";
 			PROVISIONING_PROFILE_SPECIFIER = "";
 			DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -479,7 +479,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C0000000000000000000000D /* Build configuration list for PBXProject "RunCatPlus" */ = {
+		C0000000000000000000000D /* Build configuration list for PBXProject "Cleo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0000000000000000000000F /* Debug */,
@@ -488,7 +488,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0000000000000000000000E /* Build configuration list for PBXNativeTarget "RunCatPlus" */ = {
+		C0000000000000000000000E /* Build configuration list for PBXNativeTarget "Cleo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C00000000000000000000011 /* Debug */,
