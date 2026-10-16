@@ -63,7 +63,7 @@ final class LaunchAgentManager: ObservableObject {
 
         let result = runLaunchCtl(arguments: [
             "bootstrap",
-            "user/\(getuid())",
+            "gui/\(getuid())",
             plistURL.path,
         ])
 
@@ -87,7 +87,7 @@ final class LaunchAgentManager: ObservableObject {
         if plistExists {
             result = runLaunchCtl(arguments: [
                 "bootout",
-                "user/\(getuid())/\(Self.label)",
+                "gui/\(getuid())/\(Self.label)",
             ])
         } else {
             result = .success(())
