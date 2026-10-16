@@ -30,7 +30,7 @@ RESOURCES = sorted(
     os.path.join("Cleo/CatFrames", f)
     for f in os.listdir(os.path.join(ROOT, "Cleo/CatFrames"))
     if f.startswith("frame") and f.endswith(".png")
-)
+) + ["Cleo/AppIcon.icns"]
 
 _counter = [0]
 def uid():
@@ -114,6 +114,7 @@ def build_settings(project, config):
             'DEVELOPMENT_TEAM = "";',
             "GENERATE_INFOPLIST_FILE = YES;",
             "INFOPLIST_KEY_CFBundleDisplayName = Cleo;",
+            "INFOPLIST_FILE = Cleo/Info.plist;",
             "INFOPLIST_KEY_LSUIElement = YES;",
             'INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026.";',
             'LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");',
@@ -173,7 +174,8 @@ for s in SOURCES:
     out.append(f'\t\t{FILE_REFS[s]} /* {b} */ = {{isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "{b}"; sourceTree = "<group>"; }};')
 for r in RESOURCES:
     b = os.path.basename(r)
-    out.append(f'\t\t{FILE_REFS[r]} /* {b} */ = {{isa = PBXFileReference; lastKnownFileType = image.png; path = "{b}"; sourceTree = "<group>"; }};')
+    ftype = "image.icns" if b.endswith(".icns") else "image.png"
+    out.append(f'\t\t{FILE_REFS[r]} /* {b} */ = {{isa = PBXFileReference; lastKnownFileType = {ftype}; path = "{b}"; sourceTree = "<group>"; }};')
 out.append("/* End PBXFileReference section */")
 
 # ---- PBXFrameworksBuildPhase ----
@@ -207,7 +209,8 @@ launch_children = [FILE_REFS[s] for s in SOURCES if group_of(s) == LAUNCH_GROUP]
 app_children = [FILE_REFS[s] for s in SOURCES if group_of(s) is None]
 app_children += [PROVIDERS_GROUP, VIEWS_GROUP, CATFRAMES_GROUP, LAUNCH_GROUP]
 main_children = [PRODUCT_REF, APP_GROUP]
-catframes_children = [FILE_REFS[r] for r in RESOURCES]
+catframes_children = [FILE_REFS[r] for r in RESOURCES if r.endswith(".png")]
+app_children.append(FILE_REFS["Cleo/AppIcon.icns"])
 
 out.append(group_block(PROVIDERS_GROUP, provider_children, "Providers"))
 out.append(group_block(VIEWS_GROUP, view_children, "Views"))

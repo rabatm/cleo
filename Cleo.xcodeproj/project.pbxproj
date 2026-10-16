@@ -39,6 +39,7 @@
 		C0000000000000000000004E /* frame7.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004D /* frame7.png */; };
 		C00000000000000000000050 /* frame8.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004F /* frame8.png */; };
 		C00000000000000000000052 /* frame9.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000051 /* frame9.png */; };
+		C00000000000000000000054 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000053 /* AppIcon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		C0000000000000000000004D /* frame7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame7.png"; sourceTree = "<group>"; };
 		C0000000000000000000004F /* frame8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame8.png"; sourceTree = "<group>"; };
 		C00000000000000000000051 /* frame9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame9.png"; sourceTree = "<group>"; };
+		C00000000000000000000053 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "AppIcon.icns"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				C00000000000000000000007 /* Views */,
 				C00000000000000000000008 /* CatFrames */,
 				C00000000000000000000009 /* Launch */,
+				C00000000000000000000053 /* AppIcon.icns */,
 			);
 			path = "Cleo";
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				C0000000000000000000004E /* frame7.png in Resources */,
 				C00000000000000000000050 /* frame8.png in Resources */,
 				C00000000000000000000052 /* frame9.png in Resources */,
+				C00000000000000000000054 /* AppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +408,7 @@
 			DEVELOPMENT_TEAM = "";
 			GENERATE_INFOPLIST_FILE = YES;
 			INFOPLIST_KEY_CFBundleDisplayName = Cleo;
+			INFOPLIST_FILE = Cleo/Info.plist;
 			INFOPLIST_KEY_LSUIElement = YES;
 			INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026.";
 			LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
@@ -463,6 +468,7 @@
 			DEVELOPMENT_TEAM = "";
 			GENERATE_INFOPLIST_FILE = YES;
 			INFOPLIST_KEY_CFBundleDisplayName = Cleo;
+			INFOPLIST_FILE = Cleo/Info.plist;
 			INFOPLIST_KEY_LSUIElement = YES;
 			INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026.";
 			LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
