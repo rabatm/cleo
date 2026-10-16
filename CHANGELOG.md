@@ -14,6 +14,8 @@
 - ✨ Ligne « Ouvrir au démarrage » vers les Réglages Système, interrupteur « Démarrage au login », « Quitter Cleo ⌘Q ».
 - 🛠️ Le popover se cale sur la taille de son contenu (le haut n'est plus coupé).
 - 🧹 Retrait du bouton « Actualiser les quotas », de la pression mémoire et du swap : les quotas se rafraîchissent seuls.
+- 📝 README : nouveau screenshot `Cleo3` (interface sombre, anneaux de quota) et légende mise à jour.
+- 📝 README : la transmission finale s'inspire désormais de Forrest Gump, version kernel d'Alabama. Cleo a couru droit à travers le scheduler.
 
 ## v1.0.1 « Coussinet » — 2026-10-16 🩹
 
