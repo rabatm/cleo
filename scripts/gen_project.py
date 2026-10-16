@@ -107,7 +107,7 @@ def build_settings(project, config):
     ]
     if not project:
         lines += [
-            'CODE_SIGN_IDENTITY = "-";',
+            'CODE_SIGN_IDENTITY = "Cleo Dev";',
             "CODE_SIGN_STYLE = Manual;",
             "COMBINE_HIDPI_IMAGES = YES;",
             "CURRENT_PROJECT_VERSION = 1;",
