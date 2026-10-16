@@ -18,6 +18,20 @@ struct QuotaWindow: Equatable {
     }
 }
 
+extension QuotaWindow {
+    /// "3h 12m", "47m" ou "2j 14h" — version lisible pour le menu.
+    var remainingText: String {
+        guard let resetsAt else { return "—" }
+        let seconds = resetsAt.timeIntervalSinceNow
+        guard seconds > 0 else { return "0m" }
+        let hours = Int(seconds / 3600)
+        let minutes = Int(seconds.truncatingRemainder(dividingBy: 3600)) / 60
+        if hours >= 24 { return "\(hours / 24)j \(hours % 24)h" }
+        if hours >= 1 { return "\(hours)h \(minutes)m" }
+        return "\(max(minutes, 1))m"
+    }
+}
+
 /// État générique affiché par un anneau de quota dans la barre des menus.
 struct QuotaState: Equatable {
     enum Connectivity: Equatable {

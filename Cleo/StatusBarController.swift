@@ -51,9 +51,10 @@ final class StatusBarController: NSObject, NSPopoverDelegate {
                                       kimi: appState.kimi,
                                       launchAgent: appState.launchAgent)
         let hosting = NSHostingController(rootView: content)
-        hosting.preferredContentSize = NSSize(width: 300, height: 400)
-        let popover = NSPopover()
+        hosting.sizingOptions = [.preferredContentSize]
+                let popover = NSPopover()
         popover.behavior = .transient
+        popover.appearance = NSAppearance(named: .darkAqua)
         popover.animates = true
         popover.contentViewController = hosting
         popover.delegate = self

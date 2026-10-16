@@ -4,6 +4,17 @@
 
 ---
 
+## v1.1.0 « Ronron » — 2026-10-16 😻
+
+**Un menu qui ronronne.**
+
+- ✨ Menu refait de zéro : panneau sombre, en-tête avec l'icône de Cleo et son humeur (« En pleine forme ! », « Ça s'agite un peu », « Cleo a chaud… »).
+- ✨ Barres CPU (bleue) et Mémoire (violette) en dégradé, valeurs à droite.
+- ✨ Claude Code et Kimi Code : anneau de quota + temps restant (« 3h 12m restantes ») + détail des fenêtres.
+- ✨ Ligne « Ouvrir au démarrage » vers les Réglages Système, interrupteur « Démarrage au login », « Quitter Cleo ⌘Q ».
+- 🛠️ Le popover se cale sur la taille de son contenu (le haut n'est plus coupé).
+- 🧹 Retrait du bouton « Actualiser les quotas », de la pression mémoire et du swap : les quotas se rafraîchissent seuls.
+
 ## v1.0.1 « Coussinet » — 2026-10-16 🩹
 
 **Des coussinets plus stables sous les pattes.**
