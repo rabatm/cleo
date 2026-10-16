@@ -38,7 +38,7 @@ Vous savez tous les deux ce qui vient de se passer.
 | |
 |:--:|
 | ![Menu quotas — démarrage actif](screen/Cleo3.png) |
-| *CPU à 32 %, lancement au login activé. Cleo approuve ce niveau d'engagement.* |
+| *CPU à 14 %, Cleo en pleine forme, tous les anneaux sous contrôle. Le toggle de démarrage guette.* |
 
 ## 03 — TELEMETRY
 
