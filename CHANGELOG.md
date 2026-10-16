@@ -4,6 +4,13 @@
 
 ---
 
+## v1.0.1 « Coussinet » — 2026-10-16 🩹
+
+**Des coussinets plus stables sous les pattes.**
+
+- 🛠️ Signature avec une identité auto-signée stable : le trousseau macOS ne perd plus les autorisations ACL à chaque rebuild. Cleo garde ses accès, comme un chat garde son canapé.
+- 🛠️ LaunchAgent déployé dans le domaine `gui/<uid>` (`user/<uid>` échouait avec `EIO`). Le démarrage au login fonctionne vraiment maintenant. Testé, validé, ronronné.
+
 ## v1.0.0 « Moustache » — 2026-10-16 🎉
 
 **Cleo a une face.**
