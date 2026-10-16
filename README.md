@@ -125,9 +125,9 @@ Et d'avoir un chat qui court quand votre Mac travaille trop.
 
 ## 07 — FINAL TRANSMISSION
 
-> « Je ne cours pas parce que ton CPU est à 90 %. Je cours parce que toi, tu cours. »
+> « Ce jour-là, sans raison particulière, j'ai décidé de courir un peu. Alors j'ai couru jusqu'au bout du thread, et une fois arrivé là, je me suis dit que je pourrais courir jusqu'au bout du process. Et une fois arrivé là, je me suis dit que je pourrais courir à travers tout le scheduler. Et puisque j'étais déjà allé si loin, autant courir à travers le kernel tout entier. C'est ce que j'ai fait, j'ai couru droit à travers le kernel. Puis, sans raison particulière, j'ai continué à courir, j'ai couru droit vers les 100 % de CPU. Et une fois arrivé là-bas, puisque j'étais déjà allé si loin, autant faire demi-tour et recommencer. »
 >
-> — Cleo, probablement, pendant que vous attendiez votre build.
+> — Cleo, probablement, après ton troisième `npm install` de la journée.
 
 ---
 
