@@ -12,23 +12,29 @@
 
 ## 01 — THE LORE
 
-Au commencement, il n'y avait qu'une barre de menu. Froide. Grise. Fonctionnelle. Une existence sans relief, sans panache, sans le moindre félin pour juger vos choix techniques.
+J'ai développé un chat qui court plus vite quand mon Mac souffre.
 
-Puis Cleo est apparu.
+Au départ, je voulais juste une petite animation dans ma barre de menu macOS. Et puis, comme tout développeur qui se respecte, j'ai fini par en faire beaucoup trop.
 
-Cleo est un chat animé qui fait du parkour dans votre barre de menu. Sa vitesse est directement proportionnelle à l'activité de votre processeur. Vous compilez ? Il accélère. Vous lancez trois environnements Docker, deux builds et un modèle local en même temps ? Il entre en hyperespace.
+Je vous présente **Cleo** : un chat qui fait du parkour dans la barre de menu de ton Mac, et qui adapte sa vitesse à la charge du processeur.
 
-Votre code plante ? Cleo ne vous juge pas.
+Tu compiles → elle accélère.
+Tu lances Docker, trois builds et un modèle d'IA en local → elle entre en hyperespace.
+Ton code plante → elle ne te juge pas.
 
-Enfin, pas ouvertement.
+Enfin…
 
-Mais Cleo ne fait pas que courir. Il surveille aussi vos quotas Claude et Kimi, les représente sous forme d'anneaux et compte les secondes avant leur réinitialisation. Une sorte de tableau de bord personnel, supervisé par un animal qui n'a jamais validé une seule pull request.
+Mais courir ne suffisait pas. Je lui ai donc appris à surveiller :
 
-Quand le quota tombe à zéro, Cleo s'arrête.
+- le CPU et la mémoire de ton Mac
+- tes quotas Claude et Kimi
+- le temps restant avant leur réinitialisation
 
-Il vous regarde.
+Le tout dans une petite app native Swift : sans icône dans le Dock, sans fenêtre inutile. Juste un chat qui vit la belle vie dans les étoiles, pendant que ton processeur transpire.
 
-Vous savez tous les deux ce qui vient de se passer.
+Et quand ton quota IA tombe à zéro, Cleo s'arrête. Elle te regarde. Tu la regardes.
+
+Bref. Vous vous regardez.
 
 ## 02 — VISUAL FEED
 
