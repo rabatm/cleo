@@ -1,3 +1,5 @@
+![Cleo — résumé](screen/cleoResum.png)
+
 # CLEO // CPU COMPANION
 
 ```text
@@ -34,11 +36,6 @@ Vous savez tous les deux ce qui vient de se passer.
 |:--:|:--:|
 | ![Cleo dans la barre de menu](screen/Cleo1.png) | ![Menu quotas — version sombre](screen/Cleo2.png) |
 | *Surveillance continue. Tolérance nulle.* | *Les anneaux ne mentent jamais.* |
-
-| |
-|:--:|
-| ![Menu quotas — démarrage actif](screen/Cleo3.png) |
-| *CPU à 14 %, Cleo en pleine forme, tous les anneaux sous contrôle. Le toggle de démarrage guette.* |
 
 ## 03 — TELEMETRY
 
