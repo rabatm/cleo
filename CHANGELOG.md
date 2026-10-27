@@ -4,6 +4,13 @@
 
 ---
 
+## v1.1.1 « Sieste » — 2026-10-27 😴
+
+**Cleo ne réveille plus personne.**
+
+- 🛠️ Fin des demandes répétées de mot de passe du trousseau. Cause : l'identité auto-signée donnait à Cleo une partition trousseau `cdhash:` qui changeait à chaque build, et securityd redemandait le mot de passe pour lire le jeton Claude Code. Cleo est désormais signée avec le certificat « Apple Development » (Team ID) : partition `teamid:` stable, une seule autorisation « Toujours autoriser » et c'est réglé. Pour de bon. Comme une sieste au soleil.
+- 🧹 Retrait de `scripts/setup_signing.sh` (certificat auto-signé « Cleo Dev »), devenu inutile.
+
 ## v1.1.0 « Ronron » — 2026-10-16 😻
 
 **Un menu qui ronronne.**

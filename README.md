@@ -99,7 +99,7 @@ Juste Cleo. Et son avis sur votre consommation CPU.
 
 - macOS récent compatible avec AppKit et SwiftUI.
 - Xcode pour compiler la cible `Cleo`.
-- Claude Code CLI installé pour la surveillance du quota Claude.
+- Claude Code CLI installé pour la surveillance du quota Claude. Au premier lancement, macOS demande une fois « Toujours autoriser » l'accès au trousseau.
 - Kimi Code CLI installé pour la surveillance du quota Kimi.
 
 ### Deployment

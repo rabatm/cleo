@@ -9,6 +9,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJ = os.path.join(ROOT, "Cleo.xcodeproj")
 TARGET_NAME = "Cleo"
 BUNDLE_ID = "com.maretin.cleo"
+SIGN_IDENTITY = "Apple Development"
+TEAM_ID = "NDUGR2UM92"  # OU du certificat Apple Development (= Team ID)
 
 SOURCES = [
     "Cleo/main.swift",
@@ -107,11 +109,16 @@ def build_settings(project, config):
     ]
     if not project:
         lines += [
-            'CODE_SIGN_IDENTITY = "Cleo Dev";',
+            # Identité Apple (certificat "Apple Development" du compte Xcode).
+            # Une identité auto-signée donne une partition trousseau "cdhash:"
+            # qui change à chaque build : macOS redemande alors le mot de passe
+            # du trousseau pour lire le jeton Claude Code. Avec un Team ID, la
+            # partition est "teamid:<TEAM>" : stable, autorisée une seule fois.
+            f'CODE_SIGN_IDENTITY = "{SIGN_IDENTITY}";',
             "CODE_SIGN_STYLE = Manual;",
             "COMBINE_HIDPI_IMAGES = YES;",
             "CURRENT_PROJECT_VERSION = 1;",
-            'DEVELOPMENT_TEAM = "";',
+            f"DEVELOPMENT_TEAM = {TEAM_ID};",
             "GENERATE_INFOPLIST_FILE = YES;",
             "INFOPLIST_KEY_CFBundleDisplayName = Cleo;",
             "INFOPLIST_FILE = Cleo/Info.plist;",
