@@ -9,74 +9,76 @@
 /* Begin PBXBuildFile section */
 		C00000000000000000000014 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000013 /* main.swift */; };
 		C00000000000000000000016 /* CleoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000015 /* CleoApp.swift */; };
-		C00000000000000000000018 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000017 /* StatusBarController.swift */; };
-		C0000000000000000000001A /* LaunchAgentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000019 /* LaunchAgentManager.swift */; };
-		C0000000000000000000001C /* CPUProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001B /* CPUProvider.swift */; };
-		C0000000000000000000001E /* MemoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001D /* MemoryProvider.swift */; };
-		C00000000000000000000020 /* QuotaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001F /* QuotaProvider.swift */; };
-		C00000000000000000000022 /* ClaudeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000021 /* ClaudeProvider.swift */; };
-		C00000000000000000000024 /* KimiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000023 /* KimiProvider.swift */; };
-		C00000000000000000000026 /* CatPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000025 /* CatPainter.swift */; };
-		C00000000000000000000028 /* CatSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000027 /* CatSprite.swift */; };
-		C0000000000000000000002A /* QuotaRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000029 /* QuotaRingView.swift */; };
-		C0000000000000000000002C /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002B /* MenuContentView.swift */; };
-		C0000000000000000000002E /* frame0.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002D /* frame0.png */; };
-		C00000000000000000000030 /* frame1.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002F /* frame1.png */; };
-		C00000000000000000000032 /* frame10.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000031 /* frame10.png */; };
-		C00000000000000000000034 /* frame11.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000033 /* frame11.png */; };
-		C00000000000000000000036 /* frame12.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000035 /* frame12.png */; };
-		C00000000000000000000038 /* frame13.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000037 /* frame13.png */; };
-		C0000000000000000000003A /* frame14.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000039 /* frame14.png */; };
-		C0000000000000000000003C /* frame15.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003B /* frame15.png */; };
-		C0000000000000000000003E /* frame16.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003D /* frame16.png */; };
-		C00000000000000000000040 /* frame17.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003F /* frame17.png */; };
-		C00000000000000000000042 /* frame18.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000041 /* frame18.png */; };
-		C00000000000000000000044 /* frame2.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000043 /* frame2.png */; };
-		C00000000000000000000046 /* frame3.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000045 /* frame3.png */; };
-		C00000000000000000000048 /* frame4.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000047 /* frame4.png */; };
-		C0000000000000000000004A /* frame5.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000049 /* frame5.png */; };
-		C0000000000000000000004C /* frame6.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004B /* frame6.png */; };
-		C0000000000000000000004E /* frame7.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004D /* frame7.png */; };
-		C00000000000000000000050 /* frame8.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004F /* frame8.png */; };
-		C00000000000000000000052 /* frame9.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000051 /* frame9.png */; };
-		C00000000000000000000054 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000053 /* AppIcon.icns */; };
+		C00000000000000000000018 /* DisplaySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000017 /* DisplaySettings.swift */; };
+		C0000000000000000000001A /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000019 /* StatusBarController.swift */; };
+		C0000000000000000000001C /* LaunchAgentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001B /* LaunchAgentManager.swift */; };
+		C0000000000000000000001E /* CPUProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001D /* CPUProvider.swift */; };
+		C00000000000000000000020 /* MemoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000001F /* MemoryProvider.swift */; };
+		C00000000000000000000022 /* QuotaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000021 /* QuotaProvider.swift */; };
+		C00000000000000000000024 /* ClaudeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000023 /* ClaudeProvider.swift */; };
+		C00000000000000000000026 /* KimiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000025 /* KimiProvider.swift */; };
+		C00000000000000000000028 /* CatPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000027 /* CatPainter.swift */; };
+		C0000000000000000000002A /* CatSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000029 /* CatSprite.swift */; };
+		C0000000000000000000002C /* QuotaRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002B /* QuotaRingView.swift */; };
+		C0000000000000000000002E /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002D /* MenuContentView.swift */; };
+		C00000000000000000000030 /* frame0.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000002F /* frame0.png */; };
+		C00000000000000000000032 /* frame1.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000031 /* frame1.png */; };
+		C00000000000000000000034 /* frame10.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000033 /* frame10.png */; };
+		C00000000000000000000036 /* frame11.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000035 /* frame11.png */; };
+		C00000000000000000000038 /* frame12.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000037 /* frame12.png */; };
+		C0000000000000000000003A /* frame13.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000039 /* frame13.png */; };
+		C0000000000000000000003C /* frame14.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003B /* frame14.png */; };
+		C0000000000000000000003E /* frame15.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003D /* frame15.png */; };
+		C00000000000000000000040 /* frame16.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000003F /* frame16.png */; };
+		C00000000000000000000042 /* frame17.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000041 /* frame17.png */; };
+		C00000000000000000000044 /* frame18.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000043 /* frame18.png */; };
+		C00000000000000000000046 /* frame2.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000045 /* frame2.png */; };
+		C00000000000000000000048 /* frame3.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000047 /* frame3.png */; };
+		C0000000000000000000004A /* frame4.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000049 /* frame4.png */; };
+		C0000000000000000000004C /* frame5.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004B /* frame5.png */; };
+		C0000000000000000000004E /* frame6.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004D /* frame6.png */; };
+		C00000000000000000000050 /* frame7.png in Resources */ = {isa = PBXBuildFile; fileRef = C0000000000000000000004F /* frame7.png */; };
+		C00000000000000000000052 /* frame8.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000051 /* frame8.png */; };
+		C00000000000000000000054 /* frame9.png in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000053 /* frame9.png */; };
+		C00000000000000000000056 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000055 /* AppIcon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C00000000000000000000003 /* Cleo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cleo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00000000000000000000013 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "main.swift"; sourceTree = "<group>"; };
 		C00000000000000000000015 /* CleoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CleoApp.swift"; sourceTree = "<group>"; };
-		C00000000000000000000017 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatusBarController.swift"; sourceTree = "<group>"; };
-		C00000000000000000000019 /* LaunchAgentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaunchAgentManager.swift"; sourceTree = "<group>"; };
-		C0000000000000000000001B /* CPUProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CPUProvider.swift"; sourceTree = "<group>"; };
-		C0000000000000000000001D /* MemoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoryProvider.swift"; sourceTree = "<group>"; };
-		C0000000000000000000001F /* QuotaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotaProvider.swift"; sourceTree = "<group>"; };
-		C00000000000000000000021 /* ClaudeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClaudeProvider.swift"; sourceTree = "<group>"; };
-		C00000000000000000000023 /* KimiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KimiProvider.swift"; sourceTree = "<group>"; };
-		C00000000000000000000025 /* CatPainter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatPainter.swift"; sourceTree = "<group>"; };
-		C00000000000000000000027 /* CatSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatSprite.swift"; sourceTree = "<group>"; };
-		C00000000000000000000029 /* QuotaRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotaRingView.swift"; sourceTree = "<group>"; };
-		C0000000000000000000002B /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuContentView.swift"; sourceTree = "<group>"; };
-		C0000000000000000000002D /* frame0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame0.png"; sourceTree = "<group>"; };
-		C0000000000000000000002F /* frame1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame1.png"; sourceTree = "<group>"; };
-		C00000000000000000000031 /* frame10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame10.png"; sourceTree = "<group>"; };
-		C00000000000000000000033 /* frame11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame11.png"; sourceTree = "<group>"; };
-		C00000000000000000000035 /* frame12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame12.png"; sourceTree = "<group>"; };
-		C00000000000000000000037 /* frame13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame13.png"; sourceTree = "<group>"; };
-		C00000000000000000000039 /* frame14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame14.png"; sourceTree = "<group>"; };
-		C0000000000000000000003B /* frame15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame15.png"; sourceTree = "<group>"; };
-		C0000000000000000000003D /* frame16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame16.png"; sourceTree = "<group>"; };
-		C0000000000000000000003F /* frame17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame17.png"; sourceTree = "<group>"; };
-		C00000000000000000000041 /* frame18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame18.png"; sourceTree = "<group>"; };
-		C00000000000000000000043 /* frame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame2.png"; sourceTree = "<group>"; };
-		C00000000000000000000045 /* frame3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame3.png"; sourceTree = "<group>"; };
-		C00000000000000000000047 /* frame4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame4.png"; sourceTree = "<group>"; };
-		C00000000000000000000049 /* frame5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame5.png"; sourceTree = "<group>"; };
-		C0000000000000000000004B /* frame6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame6.png"; sourceTree = "<group>"; };
-		C0000000000000000000004D /* frame7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame7.png"; sourceTree = "<group>"; };
-		C0000000000000000000004F /* frame8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame8.png"; sourceTree = "<group>"; };
-		C00000000000000000000051 /* frame9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame9.png"; sourceTree = "<group>"; };
-		C00000000000000000000053 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "AppIcon.icns"; sourceTree = "<group>"; };
+		C00000000000000000000017 /* DisplaySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisplaySettings.swift"; sourceTree = "<group>"; };
+		C00000000000000000000019 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatusBarController.swift"; sourceTree = "<group>"; };
+		C0000000000000000000001B /* LaunchAgentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaunchAgentManager.swift"; sourceTree = "<group>"; };
+		C0000000000000000000001D /* CPUProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CPUProvider.swift"; sourceTree = "<group>"; };
+		C0000000000000000000001F /* MemoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoryProvider.swift"; sourceTree = "<group>"; };
+		C00000000000000000000021 /* QuotaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotaProvider.swift"; sourceTree = "<group>"; };
+		C00000000000000000000023 /* ClaudeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClaudeProvider.swift"; sourceTree = "<group>"; };
+		C00000000000000000000025 /* KimiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KimiProvider.swift"; sourceTree = "<group>"; };
+		C00000000000000000000027 /* CatPainter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatPainter.swift"; sourceTree = "<group>"; };
+		C00000000000000000000029 /* CatSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatSprite.swift"; sourceTree = "<group>"; };
+		C0000000000000000000002B /* QuotaRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotaRingView.swift"; sourceTree = "<group>"; };
+		C0000000000000000000002D /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuContentView.swift"; sourceTree = "<group>"; };
+		C0000000000000000000002F /* frame0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame0.png"; sourceTree = "<group>"; };
+		C00000000000000000000031 /* frame1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame1.png"; sourceTree = "<group>"; };
+		C00000000000000000000033 /* frame10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame10.png"; sourceTree = "<group>"; };
+		C00000000000000000000035 /* frame11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame11.png"; sourceTree = "<group>"; };
+		C00000000000000000000037 /* frame12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame12.png"; sourceTree = "<group>"; };
+		C00000000000000000000039 /* frame13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame13.png"; sourceTree = "<group>"; };
+		C0000000000000000000003B /* frame14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame14.png"; sourceTree = "<group>"; };
+		C0000000000000000000003D /* frame15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame15.png"; sourceTree = "<group>"; };
+		C0000000000000000000003F /* frame16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame16.png"; sourceTree = "<group>"; };
+		C00000000000000000000041 /* frame17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame17.png"; sourceTree = "<group>"; };
+		C00000000000000000000043 /* frame18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame18.png"; sourceTree = "<group>"; };
+		C00000000000000000000045 /* frame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame2.png"; sourceTree = "<group>"; };
+		C00000000000000000000047 /* frame3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame3.png"; sourceTree = "<group>"; };
+		C00000000000000000000049 /* frame4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame4.png"; sourceTree = "<group>"; };
+		C0000000000000000000004B /* frame5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame5.png"; sourceTree = "<group>"; };
+		C0000000000000000000004D /* frame6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame6.png"; sourceTree = "<group>"; };
+		C0000000000000000000004F /* frame7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame7.png"; sourceTree = "<group>"; };
+		C00000000000000000000051 /* frame8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame8.png"; sourceTree = "<group>"; };
+		C00000000000000000000053 /* frame9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame9.png"; sourceTree = "<group>"; };
+		C00000000000000000000055 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "AppIcon.icns"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +95,11 @@
 		C00000000000000000000006 = {
 			isa = PBXGroup;
 			children = (
-				C0000000000000000000001B /* CPUProvider.swift */,
-				C0000000000000000000001D /* MemoryProvider.swift */,
-				C0000000000000000000001F /* QuotaProvider.swift */,
-				C00000000000000000000021 /* ClaudeProvider.swift */,
-				C00000000000000000000023 /* KimiProvider.swift */,
+				C0000000000000000000001D /* CPUProvider.swift */,
+				C0000000000000000000001F /* MemoryProvider.swift */,
+				C00000000000000000000021 /* QuotaProvider.swift */,
+				C00000000000000000000023 /* ClaudeProvider.swift */,
+				C00000000000000000000025 /* KimiProvider.swift */,
 			);
 			path = "Providers";
 			sourceTree = "<group>";
@@ -105,10 +107,10 @@
 		C00000000000000000000007 = {
 			isa = PBXGroup;
 			children = (
-				C00000000000000000000025 /* CatPainter.swift */,
-				C00000000000000000000027 /* CatSprite.swift */,
-				C00000000000000000000029 /* QuotaRingView.swift */,
-				C0000000000000000000002B /* MenuContentView.swift */,
+				C00000000000000000000027 /* CatPainter.swift */,
+				C00000000000000000000029 /* CatSprite.swift */,
+				C0000000000000000000002B /* QuotaRingView.swift */,
+				C0000000000000000000002D /* MenuContentView.swift */,
 			);
 			path = "Views";
 			sourceTree = "<group>";
@@ -116,7 +118,7 @@
 		C00000000000000000000009 = {
 			isa = PBXGroup;
 			children = (
-				C00000000000000000000019 /* LaunchAgentManager.swift */,
+				C0000000000000000000001B /* LaunchAgentManager.swift */,
 			);
 			path = "Launch";
 			sourceTree = "<group>";
@@ -124,25 +126,25 @@
 		C00000000000000000000008 = {
 			isa = PBXGroup;
 			children = (
-				C0000000000000000000002D /* frame0.png */,
-				C0000000000000000000002F /* frame1.png */,
-				C00000000000000000000031 /* frame10.png */,
-				C00000000000000000000033 /* frame11.png */,
-				C00000000000000000000035 /* frame12.png */,
-				C00000000000000000000037 /* frame13.png */,
-				C00000000000000000000039 /* frame14.png */,
-				C0000000000000000000003B /* frame15.png */,
-				C0000000000000000000003D /* frame16.png */,
-				C0000000000000000000003F /* frame17.png */,
-				C00000000000000000000041 /* frame18.png */,
-				C00000000000000000000043 /* frame2.png */,
-				C00000000000000000000045 /* frame3.png */,
-				C00000000000000000000047 /* frame4.png */,
-				C00000000000000000000049 /* frame5.png */,
-				C0000000000000000000004B /* frame6.png */,
-				C0000000000000000000004D /* frame7.png */,
-				C0000000000000000000004F /* frame8.png */,
-				C00000000000000000000051 /* frame9.png */,
+				C0000000000000000000002F /* frame0.png */,
+				C00000000000000000000031 /* frame1.png */,
+				C00000000000000000000033 /* frame10.png */,
+				C00000000000000000000035 /* frame11.png */,
+				C00000000000000000000037 /* frame12.png */,
+				C00000000000000000000039 /* frame13.png */,
+				C0000000000000000000003B /* frame14.png */,
+				C0000000000000000000003D /* frame15.png */,
+				C0000000000000000000003F /* frame16.png */,
+				C00000000000000000000041 /* frame17.png */,
+				C00000000000000000000043 /* frame18.png */,
+				C00000000000000000000045 /* frame2.png */,
+				C00000000000000000000047 /* frame3.png */,
+				C00000000000000000000049 /* frame4.png */,
+				C0000000000000000000004B /* frame5.png */,
+				C0000000000000000000004D /* frame6.png */,
+				C0000000000000000000004F /* frame7.png */,
+				C00000000000000000000051 /* frame8.png */,
+				C00000000000000000000053 /* frame9.png */,
 			);
 			path = "CatFrames";
 			sourceTree = "<group>";
@@ -152,12 +154,13 @@
 			children = (
 				C00000000000000000000013 /* main.swift */,
 				C00000000000000000000015 /* CleoApp.swift */,
-				C00000000000000000000017 /* StatusBarController.swift */,
+				C00000000000000000000017 /* DisplaySettings.swift */,
+				C00000000000000000000019 /* StatusBarController.swift */,
 				C00000000000000000000006 /* Providers */,
 				C00000000000000000000007 /* Views */,
 				C00000000000000000000008 /* CatFrames */,
 				C00000000000000000000009 /* Launch */,
-				C00000000000000000000053 /* AppIcon.icns */,
+				C00000000000000000000055 /* AppIcon.icns */,
 			);
 			path = "Cleo";
 			sourceTree = "<group>";
@@ -229,26 +232,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0000000000000000000002E /* frame0.png in Resources */,
-				C00000000000000000000030 /* frame1.png in Resources */,
-				C00000000000000000000032 /* frame10.png in Resources */,
-				C00000000000000000000034 /* frame11.png in Resources */,
-				C00000000000000000000036 /* frame12.png in Resources */,
-				C00000000000000000000038 /* frame13.png in Resources */,
-				C0000000000000000000003A /* frame14.png in Resources */,
-				C0000000000000000000003C /* frame15.png in Resources */,
-				C0000000000000000000003E /* frame16.png in Resources */,
-				C00000000000000000000040 /* frame17.png in Resources */,
-				C00000000000000000000042 /* frame18.png in Resources */,
-				C00000000000000000000044 /* frame2.png in Resources */,
-				C00000000000000000000046 /* frame3.png in Resources */,
-				C00000000000000000000048 /* frame4.png in Resources */,
-				C0000000000000000000004A /* frame5.png in Resources */,
-				C0000000000000000000004C /* frame6.png in Resources */,
-				C0000000000000000000004E /* frame7.png in Resources */,
-				C00000000000000000000050 /* frame8.png in Resources */,
-				C00000000000000000000052 /* frame9.png in Resources */,
-				C00000000000000000000054 /* AppIcon.icns in Resources */,
+				C00000000000000000000030 /* frame0.png in Resources */,
+				C00000000000000000000032 /* frame1.png in Resources */,
+				C00000000000000000000034 /* frame10.png in Resources */,
+				C00000000000000000000036 /* frame11.png in Resources */,
+				C00000000000000000000038 /* frame12.png in Resources */,
+				C0000000000000000000003A /* frame13.png in Resources */,
+				C0000000000000000000003C /* frame14.png in Resources */,
+				C0000000000000000000003E /* frame15.png in Resources */,
+				C00000000000000000000040 /* frame16.png in Resources */,
+				C00000000000000000000042 /* frame17.png in Resources */,
+				C00000000000000000000044 /* frame18.png in Resources */,
+				C00000000000000000000046 /* frame2.png in Resources */,
+				C00000000000000000000048 /* frame3.png in Resources */,
+				C0000000000000000000004A /* frame4.png in Resources */,
+				C0000000000000000000004C /* frame5.png in Resources */,
+				C0000000000000000000004E /* frame6.png in Resources */,
+				C00000000000000000000050 /* frame7.png in Resources */,
+				C00000000000000000000052 /* frame8.png in Resources */,
+				C00000000000000000000054 /* frame9.png in Resources */,
+				C00000000000000000000056 /* AppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,17 +264,18 @@
 			files = (
 				C00000000000000000000014 /* main.swift in Sources */,
 				C00000000000000000000016 /* CleoApp.swift in Sources */,
-				C00000000000000000000018 /* StatusBarController.swift in Sources */,
-				C0000000000000000000001A /* LaunchAgentManager.swift in Sources */,
-				C0000000000000000000001C /* CPUProvider.swift in Sources */,
-				C0000000000000000000001E /* MemoryProvider.swift in Sources */,
-				C00000000000000000000020 /* QuotaProvider.swift in Sources */,
-				C00000000000000000000022 /* ClaudeProvider.swift in Sources */,
-				C00000000000000000000024 /* KimiProvider.swift in Sources */,
-				C00000000000000000000026 /* CatPainter.swift in Sources */,
-				C00000000000000000000028 /* CatSprite.swift in Sources */,
-				C0000000000000000000002A /* QuotaRingView.swift in Sources */,
-				C0000000000000000000002C /* MenuContentView.swift in Sources */,
+				C00000000000000000000018 /* DisplaySettings.swift in Sources */,
+				C0000000000000000000001A /* StatusBarController.swift in Sources */,
+				C0000000000000000000001C /* LaunchAgentManager.swift in Sources */,
+				C0000000000000000000001E /* CPUProvider.swift in Sources */,
+				C00000000000000000000020 /* MemoryProvider.swift in Sources */,
+				C00000000000000000000022 /* QuotaProvider.swift in Sources */,
+				C00000000000000000000024 /* ClaudeProvider.swift in Sources */,
+				C00000000000000000000026 /* KimiProvider.swift in Sources */,
+				C00000000000000000000028 /* CatPainter.swift in Sources */,
+				C0000000000000000000002A /* CatSprite.swift in Sources */,
+				C0000000000000000000002C /* QuotaRingView.swift in Sources */,
+				C0000000000000000000002E /* MenuContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

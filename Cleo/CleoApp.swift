@@ -1,4 +1,5 @@
 import AppKit
+import Combine
 import SwiftUI
 
 /// Point d'entrée : application accessoire (LSUIElement) pilotée par un
@@ -28,9 +29,11 @@ final class AppState: ObservableObject {
     let claude = ClaudeProvider()
     let kimi = KimiProvider()
     let launchAgent = LaunchAgentManager()
+    let display = DisplaySettings()
 
     private var systemTimer: Timer?
     private var quotaTimer: Timer?
+    private var cancellables: Set<AnyCancellable> = []
 
     init() {
         cpu.sample()
@@ -44,17 +47,25 @@ final class AppState: ObservableObject {
             self.memory.sample()
         }
 
-        // Quotas : immédiat puis toutes les 60 s.
-        Task {
-            await claude.refresh()
-            await kimi.refresh()
-        }
+        // Quotas : immédiat puis toutes les 60 s — uniquement les fournisseurs affichés.
+        refreshQuotas()
         quotaTimer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] _ in
-            guard let self else { return }
-            Task {
-                await self.claude.refresh()
-                await self.kimi.refresh()
-            }
+            self?.refreshQuotas()
+        }
+
+        // Un fournisseur qu'on réaffiche est rafraîchi sans attendre le timer.
+        display.$showClaude.dropFirst().filter { $0 }
+            .sink { [weak self] _ in Task { await self?.claude.refresh() } }
+            .store(in: &cancellables)
+        display.$showKimi.dropFirst().filter { $0 }
+            .sink { [weak self] _ in Task { await self?.kimi.refresh() } }
+            .store(in: &cancellables)
+    }
+
+    private func refreshQuotas() {
+        Task {
+            if display.showClaude { await claude.refresh() }
+            if display.showKimi { await kimi.refresh() }
         }
     }
 

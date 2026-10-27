@@ -7,6 +7,7 @@ struct MenuContentView: View {
     @ObservedObject var claude: ClaudeProvider
     @ObservedObject var kimi: KimiProvider
     @ObservedObject var launchAgent: LaunchAgentManager
+    @ObservedObject var display: DisplaySettings
 
     private static let claudeColor = Color(red: 0.96, green: 0.62, blue: 0.20)
     private static let kimiColor = Color(red: 0.25, green: 0.56, blue: 0.98)
@@ -31,30 +32,30 @@ struct MenuContentView: View {
                                      Color(red: 0.82, green: 0.38, blue: 0.98)])
             }
 
-            divider
-            providerBlock(name: "Claude Code", state: claude.state, color: Self.claudeColor,
-                          rows: [("Fenêtre 5 h", claude.state.secondary),
-                                 ("Fenêtre 7 j", claude.state.primary)])
-            providerBlock(name: "Kimi Code", state: kimi.state, color: Self.kimiColor,
-                          rows: [("Fenêtre 5 h", kimi.state.secondary),
-                                 ("Mensuel", kimi.state.primary)])
-                .padding(.top, 18)
+            if display.showClaude || display.showKimi {
+                divider
+                VStack(alignment: .leading, spacing: 18) {
+                    if display.showClaude {
+                        providerBlock(name: "Claude Code", state: claude.state, color: Self.claudeColor,
+                                      rows: [("Fenêtre 5 h", claude.state.secondary),
+                                             ("Fenêtre 7 j", claude.state.primary)])
+                    }
+                    if display.showKimi {
+                        providerBlock(name: "Kimi Code", state: kimi.state, color: Self.kimiColor,
+                                      rows: [("Fenêtre 5 h", kimi.state.secondary),
+                                             ("Mensuel", kimi.state.primary)])
+                    }
+                }
+            }
 
             divider
             VStack(spacing: 4) {
-                HStack {
-                    Text("Démarrage au login")
-                        .font(.system(size: 13))
-                    Spacer()
-                    Toggle("", isOn: Binding(
-                        get: { launchAgent.isEnabled },
-                        set: { launchAgent.setEnabled($0) }
-                    ))
-                    .labelsHidden()
-                    .toggleStyle(.switch)
-                    .tint(Color(red: 0.36, green: 0.35, blue: 0.95))
-                }
-                .padding(.vertical, 4)
+                toggleRow(title: "Afficher Claude Code", isOn: $display.showClaude)
+                toggleRow(title: "Afficher Kimi Code", isOn: $display.showKimi)
+                toggleRow(title: "Démarrage au login", isOn: Binding(
+                    get: { launchAgent.isEnabled },
+                    set: { launchAgent.setEnabled($0) }
+                ))
 
                 if let error = launchAgent.lastError {
                     Text(error)
@@ -111,9 +112,10 @@ struct MenuContentView: View {
         }
     }
 
-    /// Humeur de Cleo selon la charge système et la consommation des quotas.
+    /// Humeur de Cleo selon la charge système et la consommation des quotas affichés.
     private var mood: String {
-        let worstQuota = [claude.state.mostCritical, kimi.state.mostCritical]
+        let worstQuota = [display.showClaude ? claude.state.mostCritical : nil,
+                          display.showKimi ? kimi.state.mostCritical : nil]
             .compactMap { $0?.percent }.max() ?? 0
         if memory.snapshot.pressure == .critical || cpu.usage > 0.9 || worstQuota >= 95 {
             return "Cleo a chaud…"
@@ -196,6 +198,19 @@ struct MenuContentView: View {
             .fill(Color.white.opacity(0.08))
             .frame(height: 1)
             .padding(.vertical, 16)
+    }
+
+    private func toggleRow(title: String, isOn: Binding<Bool>) -> some View {
+        HStack {
+            Text(title)
+                .font(.system(size: 13))
+            Spacer()
+            Toggle("", isOn: isOn)
+                .labelsHidden()
+                .toggleStyle(.switch)
+                .tint(Color(red: 0.36, green: 0.35, blue: 0.95))
+        }
+        .padding(.vertical, 4)
     }
 
     private func actionRow<Trailing: View>(icon: String, title: String,

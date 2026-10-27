@@ -15,6 +15,7 @@ TEAM_ID = "NDUGR2UM92"  # OU du certificat Apple Development (= Team ID)
 SOURCES = [
     "Cleo/main.swift",
     "Cleo/CleoApp.swift",
+"Cleo/DisplaySettings.swift",
     "Cleo/StatusBarController.swift",
     "Cleo/Launch/LaunchAgentManager.swift",
     "Cleo/Providers/CPUProvider.swift",

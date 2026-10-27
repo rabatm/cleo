@@ -49,7 +49,8 @@ final class StatusBarController: NSObject, NSPopoverDelegate {
                                       memory: appState.memory,
                                       claude: appState.claude,
                                       kimi: appState.kimi,
-                                      launchAgent: appState.launchAgent)
+                                      launchAgent: appState.launchAgent,
+                                      display: appState.display)
         let hosting = NSHostingController(rootView: content)
         hosting.sizingOptions = [.preferredContentSize]
                 let popover = NSPopover()
@@ -77,12 +78,23 @@ final class StatusBarController: NSObject, NSPopoverDelegate {
         guard let button = statusItem.button, let appState else { return }
         let dark = isDark
 
-        // Largeur totale : pastille (4) + espaces + chat + 2 anneaux + intercalaires.
+        // Anneaux affichés (selon les réglages) : état, nom, libellés, couleur de marque.
+        var rings: [(state: QuotaState, name: String, primary: String, secondary: String, color: NSColor)] = []
+        if appState.display.showClaude {
+            rings.append((appState.claude.state, "Claude Code", "7 j", "5 h",
+                          NSColor(red: 0.85, green: 0.47, blue: 0.34, alpha: 1))) // coral Claude
+        }
+        if appState.display.showKimi {
+            rings.append((appState.kimi.state, "Kimi Code", "Mensuel", "5 h",
+                          NSColor(red: 0.23, green: 0.51, blue: 0.96, alpha: 1))) // bleu Kimi
+        }
+
+        // Largeur totale : pastille (4) + espaces + chat + anneaux visibles + intercalaires.
         let dotWidth: CGFloat = 4, gapAfterDot: CGFloat = 4
         let gapBeforeRing: CGFloat = 6, gapBetweenRings: CGFloat = 4
-        let width = dotWidth + gapAfterDot
-            + catSize.width + gapBeforeRing
-            + ringSize + gapBetweenRings + ringSize
+        let ringsWidth = rings.isEmpty ? 0
+            : gapBeforeRing + CGFloat(rings.count) * ringSize + CGFloat(rings.count - 1) * gapBetweenRings
+        let width = dotWidth + gapAfterDot + catSize.width + ringsWidth
         let size = NSSize(width: width, height: barHeight)
 
         // Un seul bitmap explicite + NSGraphicsContext : fiable partout,
@@ -127,21 +139,14 @@ final class StatusBarController: NSObject, NSPopoverDelegate {
         let ringH = ringSize + 3 // hauteur rendue : cadre + pastille de marque
         let ringY = (barHeight - ringH) / 2
         var ringX = dotWidth + gapAfterDot + catSize.width + gapBeforeRing
-        let claudeRing = ringImage(
-            state: appState.claude.state, providerName: "Claude Code",
-            primaryLabel: "7 j", secondaryLabel: "5 h",
-            brandColor: NSColor(red: 0.85, green: 0.47, blue: 0.34, alpha: 1), // coral Claude
-            dark: dark)
-        claudeRing.draw(in: NSRect(x: ringX * S, y: ringY * S,
-                                  width: ringSize * S, height: ringH * S))
-        ringX += ringSize + gapBetweenRings
-        let kimiRing = ringImage(
-            state: appState.kimi.state, providerName: "Kimi Code",
-            primaryLabel: "Mensuel", secondaryLabel: "5 h",
-            brandColor: NSColor(red: 0.23, green: 0.51, blue: 0.96, alpha: 1), // bleu Kimi
-            dark: dark)
-        kimiRing.draw(in: NSRect(x: ringX * S, y: ringY * S,
+        for ring in rings {
+            ringImage(state: ring.state, providerName: ring.name,
+                      primaryLabel: ring.primary, secondaryLabel: ring.secondary,
+                      brandColor: ring.color, dark: dark)
+                .draw(in: NSRect(x: ringX * S, y: ringY * S,
                                  width: ringSize * S, height: ringH * S))
+            ringX += ringSize + gapBetweenRings
+        }
 
         NSGraphicsContext.restoreGraphicsState()
         // NSImage en points + rep 2x : la barre des menus l'affiche en Retina.
