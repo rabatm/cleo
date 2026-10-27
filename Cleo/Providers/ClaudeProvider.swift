@@ -1,5 +1,4 @@
 import Foundation
-import Security
 
 enum ClaudeProviderError: Error {
     case noCredentials
@@ -173,19 +172,20 @@ final class ClaudeProvider: ObservableObject, QuotaProviding {
 
 // MARK: - Accès trousseau
 
+/// Lecture/écriture de l'item « Claude Code-credentials » via /usr/bin/security,
+/// comme le fait le CLI Claude Code. Pourquoi pas SecItem* en direct : l'item
+/// porte une « partition list » que le CLI remet à `apple-tool:` à chaque
+/// rafraîchissement de jeton (`security add-generic-password -U`). Toute
+/// autre app, même signée avec un Team ID et « toujours autorisée », se voit
+/// alors redemander le mot de passe de session. L'outil `security`, lui, est
+/// dans la partition `apple-tool:` en permanence : zéro invite.
 enum KeychainClaude {
     private static let service = "Claude Code-credentials"
+    private static let securityTool = "/usr/bin/security"
 
     static func readCredentials() -> [String: Any]? {
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-            kSecReturnData as String: true,
-            kSecMatchLimit as String: kSecMatchLimitOne,
-        ]
-        var item: CFTypeRef?
-        guard SecItemCopyMatching(query as CFDictionary, &item) == errSecSuccess,
-              let data = item as? Data,
+        guard let output = runSecurity(["find-generic-password", "-s", service, "-w"]),
+              let data = output.data(using: .utf8),
               let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
             return nil
         }
@@ -200,23 +200,43 @@ enum KeychainClaude {
         readOAuth()?["accessToken"] as? String
     }
 
+    /// Met à jour l'item en place (`-U`), en hexadécimal (`-X`) pour éviter
+    /// tout souci d'échappement — même commande que le CLI.
     @discardableResult
     static func updateCredentials(_ credentials: [String: Any]) -> Bool {
         guard let data = try? JSONSerialization.data(withJSONObject: credentials) else {
             return false
         }
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-        ]
-        let update: [String: Any] = [kSecValueData as String: data]
-        let status = SecItemUpdate(query as CFDictionary, update as CFDictionary)
-        if status == errSecItemNotFound {
-            var newItem = query
-            newItem[kSecAttrAccount as String] = service
-            newItem[kSecValueData as String] = data
-            return SecItemAdd(newItem as CFDictionary, nil) == errSecSuccess
+        let hex = data.map { String(format: "%02x", $0) }.joined()
+        let account = itemAccount() ?? NSUserName()
+        return runSecurity(["add-generic-password", "-U", "-a", account, "-s", service, "-X", hex]) != nil
+    }
+
+    /// Compte de l'item existant (`"acct"<blob>="…"`), pour que `-U` mette à
+    /// jour le bon item au lieu d'en créer un second.
+    private static func itemAccount() -> String? {
+        guard let listing = runSecurity(["find-generic-password", "-s", service]) else { return nil }
+        for line in listing.split(separator: "\n") {
+            let trimmed = line.trimmingCharacters(in: .whitespaces)
+            guard trimmed.hasPrefix("\"acct\"<blob>=\"") else { continue }
+            return String(trimmed.dropFirst("\"acct\"<blob>=\"".count).dropLast())
         }
-        return status == errSecSuccess
+        return nil
+    }
+
+    /// Lance `security` et renvoie sa sortie standard (sans retour final),
+    /// ou nil si l'outil échoue (item absent, accès refusé…).
+    private static func runSecurity(_ arguments: [String]) -> String? {
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: securityTool)
+        process.arguments = arguments
+        let stdout = Pipe()
+        process.standardOutput = stdout
+        process.standardError = FileHandle.nullDevice
+        do { try process.run() } catch { return nil }
+        let data = stdout.fileHandleForReading.readDataToEndOfFile()
+        process.waitUntilExit()
+        guard process.terminationStatus == 0 else { return nil }
+        return String(data: data, encoding: .utf8)?.trimmingCharacters(in: .newlines)
     }
 }
